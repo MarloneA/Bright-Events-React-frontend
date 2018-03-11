@@ -1,25 +1,34 @@
 import React, {Component} from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import Register from './Register';
+import Login from './Login';
+
+import logo from "./images/bevlogo.png";
 
 export default class ResetPassword extends Component {
 
   render(){
     return (
-      <form className="reset-password-form">
-        <div class="form-group">
-          <label className="label" for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control custom-form-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-        </div>
-        <div class="form-group">
-          <label className="label" for="exampleInputPassword1">Old Password</label>
-          <input type="password" class="form-control custom-form-input" id="exampleInputPassword1" placeholder="Password"/>
-        </div>
-        <div class="form-group">
-          <label className="label" for="exampleInputPassword1">New Password</label>
-          <input type="password" class="form-control custom-form-input" id="exampleInputPassword1" placeholder="Password"/>
-        </div>
+        <form className="form-signin">
+          <div className="text-center mb-4">
+            <img className="mb-4" src={logo} alt="" width="72" height="72"/>
+            <h1 className="h3 mb-3 font-weight-normal" id="ghostwhite">Password Reset</h1>
+          </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+          <div class="form-label-group">
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autoFocus/>
+            <label htmlFor="inputEmail">Email address</label>
+          </div>
+
+
+          <button className="btn btn-lg btn-primary btn-block" type="submit">Send Request</button>
+
+          <p className="login-navigate"><a href="/register">New User? Register</a></p>
+          <p className="login-navigate password"><a href="/login">Login</a></p>
+          <p className="login-navigate password"><a href="/">Mainpage</a></p>
+
+        </form>
+
     )
   }
 }

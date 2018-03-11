@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ResetPassword from './pages/ResetPassword';
+import NewEvent from './pages/NewEvent';
 
 import "./pages/css/styles.css";
 
@@ -14,11 +15,12 @@ export default class App extends Component{
 
     return(
       <Router>
-        <div>
+        <div className="custom-pg-background">
           <Route exact path="/" component={Home}/>
           <Route path="/login" component={Login}/>
           <Route path="/register" component={Register}/>
           <Route path="/reset-password" component={ResetPassword}/>
+          <Route path="/create-event" component={NewEvent}/>
         </div>
       </Router>
     )

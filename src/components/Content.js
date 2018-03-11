@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+import EditEvent from './EditEvent';
+import thumbnail from '../pages/images/dinner.jpg'
+
 export default class Events extends Component {
 
   constructor(){
@@ -15,52 +18,96 @@ export default class Events extends Component {
   render(){
     return (
         <div className="custom-main-content">
-          <div class="event">
+          <div className="event">
 
-             <button class="edit btn btn-sm" data-target="#myModal" data-toggle="modal">Edit</button>
+            <img className="event-img" src={thumbnail}/>
 
-             <h4>{this.state.title}</h4>
-             <h6>{this.state.date}</h6>
-             <p>{this.state.description}</p>
-             <h6>{this.state.created}</h6>
+            <div className="event-content">
+              <button className="custom-btn edit btn btn-sm" data-target="#myModal" data-toggle="modal">Edit</button>
 
-             <button class="btn btn-default btn-lg">RSVP</button>
-           </div>
-           <div class="line"></div>
+              <EditEvent/>
 
-           <div class="event">
+              <h4 className="custom-event-styling">{this.state.title}</h4>
+              <h6 className="custom-event-styling">{this.state.date}</h6>
+              <p className="custom-event-styling-par">{this.state.description}</p>
+              <h6 className="custom-event-styling">{this.state.created}</h6>
 
-              <button class="edit btn btn-sm" data-target="#myModal" data-toggle="modal">Edit</button>
-
-              <h4>Title of Event</h4>
-              <h6>Date of event</h6>
-              <p>This project is broken down into 4 challenges whose completion would contribute greatly to your learning towards becoming a full-stack developer. Upon completion, you would have built a world-class full-stack (frontend and backend) Python and JavaScript application. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <h6>Date Created</h6><button class="btn btn-default btn-lg">RSVP</button>
+              <button className="custom-btn btn btn-default btn-lg">RSVP</button>
             </div>
-            <div class="line"></div>
 
-            <div class="event">
+           </div>
+           <div className="line"></div>
+           <div className="event">
 
-               <button class="edit btn btn-sm" data-target="#myModal" data-toggle="modal">Edit</button>
+             <img className="event-img" src={thumbnail}/>
 
-               <h4>Title of Event</h4>
-               <h6>Date of event</h6>
-               <p>This project is broken down into 4 challenges whose completion would contribute greatly to your learning towards becoming a full-stack developer. Upon completion, you would have built a world-class full-stack (frontend and backend) Python and JavaScript application. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-               <h6>Date Created</h6><button class="btn btn-default btn-lg">RSVP</button>
+             <div className="event-content">
+               <button className="custom-btn edit btn btn-sm" data-target="#myModal" data-toggle="modal">Edit</button>
+
+               <h4>{this.state.title}</h4>
+               <h6>{this.state.date}</h6>
+               <p>{this.state.description}</p>
+               <h6>{this.state.created}</h6>
+
+               <button className="custom-btn btn btn-default btn-lg">RSVP</button>
              </div>
-             <div class="line"></div>
 
-             <div class="event">
+            </div>
+            <div className="line"></div>
 
-                <button class="edit btn btn-sm" data-target="#myModal" data-toggle="modal">Edit</button>
+            <div className="event">
 
-                <h4>Title of Event</h4>
-                <h6>Date of event</h6>
-                <p>This project is broken down into 4 challenges whose completion would contribute greatly to your learning towards becoming a full-stack developer. Upon completion, you would have built a world-class full-stack (frontend and backend) Python and JavaScript application. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <h6>Date Created</h6><button class="btn btn-default btn-lg">RSVP</button>
+              <img className="event-img" src={thumbnail}/>
+
+              <div className="event-content">
+                <button className="custom-btn edit btn btn-sm" data-target="#myModal" data-toggle="modal">Edit</button>
+
+                <h4>{this.state.title}</h4>
+                <h6>{this.state.date}</h6>
+                <p>{this.state.description}</p>
+                <h6>{this.state.created}</h6>
+
+                <button className="custom-btn btn btn-default btn-lg">RSVP</button>
               </div>
-              <div class="line"></div>
 
+             </div>
+             <div className="line"></div>
+
+             <div className="event">
+
+               <img className="event-img" src={thumbnail}/>
+
+               <div className="event-content">
+                 <button className="custom-btn edit btn btn-sm" data-target="#myModal" data-toggle="modal">Edit</button>
+
+                 <h4>{this.state.title}</h4>
+                 <h6>{this.state.date}</h6>
+                 <p>{this.state.description}</p>
+                 <h6>{this.state.created}</h6>
+
+                 <button className="custom-btn btn btn-default btn-lg">RSVP</button>
+               </div>
+
+              </div>
+              <div className="line"></div>
+
+              <div className="event">
+
+                <img className="event-img" src={thumbnail}/>
+
+                <div className="event-content">
+                  <button className="custom-btn edit btn btn-sm" data-target="#myModal" data-toggle="modal">Edit</button>
+
+                  <h4>{this.state.title}</h4>
+                  <h6>{this.state.date}</h6>
+                  <p>{this.state.description}</p>
+                  <h6>{this.state.created}</h6>
+
+                  <button className="custom-btn btn btn-default btn-lg">RSVP</button>
+                </div>
+
+               </div>
+               <div className="line"></div>
         </div>
     )
   }
