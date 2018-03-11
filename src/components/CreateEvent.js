@@ -15,7 +15,7 @@ export default class CreateEvent extends Component {
         <div class="form-group">
           <label class="control-label col-sm-2" for="email">Date:</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control custom-create-event-input" id="email" placeholder="Enter event date"/>
+            <input type="date" class="form-control custom-create-event-input" id="email" placeholder="Enter event date"/>
           </div>
         </div>
 
