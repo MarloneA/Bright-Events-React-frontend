@@ -7,22 +7,22 @@ export default class CreateEvent extends Component {
     return (
       <form class="form-horizontal custom-create-events" action="/action_page.php">
         <div class="form-group">
-          <label class="control-label col-sm-2" for="email">Title:</label>
+          <label class="control-label col-sm-2" for="title">Title:</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control custom-create-event-input" id="email" placeholder="Enter Title"/>
+            <input type="text" class="form-control custom-create-event-input" id="title" placeholder="Enter Title"/>
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-sm-2" for="email">Date:</label>
+          <label class="control-label col-sm-2" for="date">Date:</label>
           <div class="col-sm-10">
-            <input type="date" class="form-control custom-create-event-input" id="email" placeholder="Enter event date"/>
+            <input type="date" class="form-control custom-create-event-input" id="date" placeholder="Enter event date"/>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="control-label col-sm-2" for="email">Venue:</label>
+          <label class="control-label col-sm-2" for="venue">Venue:</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control custom-create-event-input" id="email" placeholder="Where will you event be held at?"/>
+            <input type="text" class="form-control custom-create-event-input" id="venue" placeholder="Where will you event be held at?"/>
           </div>
         </div>
 

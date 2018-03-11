@@ -208,6 +208,11 @@ body{
   .line{
     border:1px dotted #602115;
   }
+  .btn:hover{
+    color: #ebbd5a;
+    font-weight: 900;
+    background-color: #602314;
+  }
 /*
   -------------------------------------------------
 
@@ -257,6 +262,8 @@ body{
     height: 250px;
     width: 250px;
     margin-right: 35px;
+    border-top-right-radius: 95px;
+    border-bottom-left-radius: 95px
   }
   .custom-btn{
     border: 1px solid;
@@ -409,6 +416,9 @@ body{
   padding: 15px;
   top: -14px;
 
+}
+select.form-control:not([size]):not([multiple]) {
+    height: calc(2.25rem + 15px);
 }
 .form-label-group:focus{
   outline-color: #d88f09;
