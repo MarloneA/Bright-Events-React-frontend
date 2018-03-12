@@ -11,8 +11,7 @@ export default class EditEvent extends Component {
 						<div class="modal-content">
 
 							<div class="modal-header">
-								<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span> <span class="sr-only">Close</span></button>
-								<h4 class=" modal-heading modal-title" id="myModalLabel">Edit event</h4>
+								<h4 class=" modal-heading modal-title color" id="myModalLabel">Edit event</h4>
 							</div>
 
 							<div class="modal-body">
@@ -22,6 +21,12 @@ export default class EditEvent extends Component {
 											<input class="form-control" id="inputText" placeholder="Title" type="text"/>
 										</div>
 									</div>
+                  <div class="form-group">
+										<div class="col-sm-12">
+											<input class="form-control" id="inputText" placeholder="Date" type="date"/>
+										</div>
+									</div>
+
 									<div class="form-group">
 										<div class="col-sm-12">
 											<input class="form-control" id="inputText" placeholder="Category" type="text"/>

@@ -214,6 +214,10 @@ body{
   .copyright-footer{
     float:right;
   }
+  .color{
+      color: black;
+      margin-left: 15px;
+  }
   .line{
     border:1px dotted #602115;
   }
