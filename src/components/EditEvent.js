@@ -3,6 +3,9 @@ import React, {Component} from 'react';
 export default class EditEvent extends Component {
   render() {
     return (
+
+      <div>
+        <button className="custom-btn edit btn btn-sm" data-target="#myModal" data-toggle="modal">Edit</button>
 				<div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="myModal" role="dialog" tabindex="-1">
 					<div class="modal-dialog">
 						<div class="modal-content">
@@ -37,12 +40,14 @@ export default class EditEvent extends Component {
 
 
 							<div class="modal-footer">
-								<button class="btn btn-default" data-dismiss="modal" type="button">Close</button> <button class="btn btn-primary" type="button">Save changes</button>
+								<button class="btn btn-default custom-modal-close-btn" data-dismiss="modal" type="button">Close</button> <button class="btn btn-primary custom-modal-save-btn" type="button">Save changes</button>
 							</div>
 						</div>
 
 					</div>
 				</div>
+
+      </div>
     );
   }
 }

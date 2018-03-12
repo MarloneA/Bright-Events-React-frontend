@@ -89,17 +89,26 @@ body{
 		float: right;
 	}
 	#inputText{
-		width: 80%;
+		width: 100%;
     margin: auto;
-    padding: 25px;
+    padding: 13px;
 	}
 	#describe{
-		width: 76%;
+		width:96%;
 	margin: auto;
 	}
-	#myModalLabel{
+	/*#myModalLabel{
 		margin-left: 58px;
-	}
+	}*/
+  .modal-dialog{
+    max-width: 635px;
+  }
+  .custom-modal-close-btn{
+    margin-right: 61%;
+  }
+  .custom-modal-save-btn{
+    margin-right: 12px;
+  }
 	.footer-custom{
 
     height: 60px;

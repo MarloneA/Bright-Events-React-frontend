@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 
 import EditEvent from './EditEvent';
+import Rsvp from './Rsvp';
+
 import thumbnail from '../pages/images/dinner.jpg'
 
 export default class Events extends Component {
@@ -18,95 +20,75 @@ export default class Events extends Component {
   render(){
     return (
         <div className="custom-main-content">
+
           <div className="event">
-
             <img className="event-img" src={thumbnail}/>
-
             <div className="event-content">
-              <button className="custom-btn edit btn btn-sm" data-target="#myModal" data-toggle="modal">Edit</button>
-
               <EditEvent/>
-
               <h4 className="custom-event-styling">{this.state.title}</h4>
               <h6 className="custom-event-styling">{this.state.date}</h6>
               <p className="custom-event-styling-par">{this.state.description}</p>
               <h6 className="custom-event-styling">{this.state.created}</h6>
-
-              <button className="custom-btn btn btn-default btn-lg">RSVP</button>
+              <Rsvp/>
             </div>
-
            </div>
+
            <div className="line"></div>
+
            <div className="event">
-
              <img className="event-img" src={thumbnail}/>
-
              <div className="event-content">
-               <button className="custom-btn edit btn btn-sm" data-target="#myModal" data-toggle="modal">Edit</button>
-
-               <h4>{this.state.title}</h4>
-               <h6>{this.state.date}</h6>
-               <p>{this.state.description}</p>
-               <h6>{this.state.created}</h6>
-
-               <button className="custom-btn btn btn-default btn-lg">RSVP</button>
+               <EditEvent/>
+               <h4 className="custom-event-styling">{this.state.title}</h4>
+               <h6 className="custom-event-styling">{this.state.date}</h6>
+               <p className="custom-event-styling-par">{this.state.description}</p>
+               <h6 className="custom-event-styling">{this.state.created}</h6>
+               <Rsvp/>
              </div>
-
             </div>
+
             <div className="line"></div>
 
             <div className="event">
-
               <img className="event-img" src={thumbnail}/>
-
               <div className="event-content">
-                <button className="custom-btn edit btn btn-sm" data-target="#myModal" data-toggle="modal">Edit</button>
-
-                <h4>{this.state.title}</h4>
-                <h6>{this.state.date}</h6>
-                <p>{this.state.description}</p>
-                <h6>{this.state.created}</h6>
-
-                <button className="custom-btn btn btn-default btn-lg">RSVP</button>
+                <EditEvent/>
+                <h4 className="custom-event-styling">{this.state.title}</h4>
+                <h6 className="custom-event-styling">{this.state.date}</h6>
+                <p className="custom-event-styling-par">{this.state.description}</p>
+                <h6 className="custom-event-styling">{this.state.created}</h6>
+                <Rsvp/>
               </div>
-
              </div>
+
              <div className="line"></div>
 
              <div className="event">
-
                <img className="event-img" src={thumbnail}/>
-
                <div className="event-content">
-                 <button className="custom-btn edit btn btn-sm" data-target="#myModal" data-toggle="modal">Edit</button>
-
-                 <h4>{this.state.title}</h4>
-                 <h6>{this.state.date}</h6>
-                 <p>{this.state.description}</p>
-                 <h6>{this.state.created}</h6>
-
-                 <button className="custom-btn btn btn-default btn-lg">RSVP</button>
+                 <EditEvent/>
+                 <h4 className="custom-event-styling">{this.state.title}</h4>
+                 <h6 className="custom-event-styling">{this.state.date}</h6>
+                 <p className="custom-event-styling-par">{this.state.description}</p>
+                 <h6 className="custom-event-styling">{this.state.created}</h6>
+                 <Rsvp/>
                </div>
-
               </div>
+
               <div className="line"></div>
 
               <div className="event">
-
                 <img className="event-img" src={thumbnail}/>
-
                 <div className="event-content">
-                  <button className="custom-btn edit btn btn-sm" data-target="#myModal" data-toggle="modal">Edit</button>
-
-                  <h4>{this.state.title}</h4>
-                  <h6>{this.state.date}</h6>
-                  <p>{this.state.description}</p>
-                  <h6>{this.state.created}</h6>
-
-                  <button className="custom-btn btn btn-default btn-lg">RSVP</button>
+                  <EditEvent/>
+                  <h4 className="custom-event-styling">{this.state.title}</h4>
+                  <h6 className="custom-event-styling">{this.state.date}</h6>
+                  <p className="custom-event-styling-par">{this.state.description}</p>
+                  <h6 className="custom-event-styling">{this.state.created}</h6>
+                  <Rsvp/>
                 </div>
-
                </div>
+
                <div className="line"></div>
         </div>
     )
