@@ -15,8 +15,8 @@ export default class ResetPassword extends Component {
             <h1 className="h3 mb-3 font-weight-normal" id="ghostwhite">Password Reset</h1>
           </div>
 
-          <div class="form-label-group">
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autoFocus/>
+          <div className="form-label-group">
+            <input type="email" id="inputEmail" className="form-control" placeholder="Email address" required autoFocus/>
             <label htmlFor="inputEmail">Email address</label>
           </div>
 

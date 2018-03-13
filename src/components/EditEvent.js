@@ -6,46 +6,46 @@ export default class EditEvent extends Component {
 
       <div>
         <button className="custom-btn edit btn btn-sm" data-target="#myModal" data-toggle="modal">Edit</button>
-				<div aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="myModal" role="dialog" tabindex="-1">
-					<div class="modal-dialog">
-						<div class="modal-content">
+				<div aria-hidden="true" aria-labelledby="myModalLabel" className="modal fade" id="myModal" role="dialog" tabindex="-1">
+					<div className="modal-dialog">
+						<div className="modal-content">
 
-							<div class="modal-header">
-								<h4 class=" modal-heading modal-title color" id="myModalLabel">Edit event</h4>
+							<div className="modal-header">
+								<h4 className=" modal-heading modal-title color" id="myModalLabel">Edit event</h4>
 							</div>
 
-							<div class="modal-body">
-								<form class="form-horizontal" role="form">
-									<div class="form-group">
-										<div class="col-sm-12">
-											<input class="form-control" id="inputText" placeholder="Title" type="text"/>
+							<div className="modal-body">
+								<form className="form-horizontal" role="form">
+									<div className="form-group">
+										<div className="col-sm-12">
+											<input className="form-control" id="inputText" placeholder="Title" type="text"/>
 										</div>
 									</div>
-                  <div class="form-group">
-										<div class="col-sm-12">
-											<input class="form-control" id="inputText" placeholder="Date" type="date"/>
+                  <div className="form-group">
+										<div className="col-sm-12">
+											<input className="form-control" id="inputText" placeholder="Date" type="date"/>
 										</div>
 									</div>
 
-									<div class="form-group">
-										<div class="col-sm-12">
-											<input class="form-control" id="inputText" placeholder="Category" type="text"/>
+									<div className="form-group">
+										<div className="col-sm-12">
+											<input className="form-control" id="inputText" placeholder="Category" type="text"/>
 										</div>
 									</div>
-									<div class="form-group">
-										<div class="col-sm-12">
-											<input class="form-control" id="inputText" placeholder="Location" type="text"/>
+									<div className="form-group">
+										<div className="col-sm-12">
+											<input className="form-control" id="inputText" placeholder="Location" type="text"/>
 										</div>
 									</div>
-									<div class="form-group">
-										<textarea class="txt-ar form-control" id="describe" rows="12">Event description</textarea>
+									<div className="form-group">
+										<textarea className="txt-ar form-control" id="describe" rows="12">Event description</textarea>
 									</div>
 								</form>
 							</div>
 
 
-							<div class="modal-footer">
-								<button class="btn btn-default custom-modal-close-btn" data-dismiss="modal" type="button">Close</button> <button class="btn btn-primary custom-modal-save-btn" type="button">Save changes</button>
+							<div className="modal-footer">
+								<button className="btn btn-default custom-modal-close-btn" data-dismiss="modal" type="button">Close</button> <button className="btn btn-primary custom-modal-save-btn" type="button">Save changes</button>
 							</div>
 						</div>
 

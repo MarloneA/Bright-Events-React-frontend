@@ -36,7 +36,7 @@ export default class Register extends Component {
 
           <button className="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
           <p className="login-navigate"><a href="/login">Already have an account? Login here</a></p>
-          <p className="login-navigate"><a href="/">Mainpage <span class="arrow-right icon"/></a></p>
+          <p className="login-navigate"><a href="/">Mainpage <span className="arrow-right icon"/></a></p>
 
         </form>
 
