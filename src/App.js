@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 
 import Home from './pages/Home';
@@ -8,7 +8,7 @@ import Register from './pages/Register';
 import ResetPassword from './pages/ResetPassword';
 import NewEvent from './pages/NewEvent';
 
-import "./pages/css/styles.css";
+import "./assets/css/styles.css";
 
 export default class App extends Component{
   render(){

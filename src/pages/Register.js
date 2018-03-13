@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import logo from "./images/bevlogo.png";
+import logo from "../assets/images/bevlogo.png";
 
 export default class Register extends Component {
 

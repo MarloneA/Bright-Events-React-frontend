@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Register from './Register';
 import ResetPassword from './ResetPassword';
 
-import logo from "./images/bevlogo.png";
+import logo from "../assets/images/bevlogo.png";
 
 export default class Login extends Component {
 

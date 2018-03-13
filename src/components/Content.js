@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import EditEvent from './EditEvent';
 import Rsvp from './Rsvp';
 
-import thumbnail from '../pages/images/dinner.jpg'
+import thumbnail from '../assets/images/dinner.jpg'
 
 export default class Events extends Component {
 
