@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { notify } from 'react-notify-toast';
+import Notifications, { notify } from 'react-notify-toast';
 import axios from 'axios';
 
 import logo from "../assets/images/bevlogo.png";
@@ -36,7 +36,7 @@ export default class Register extends Component {
         notify.show(error.response.data.message, 'error', 4000);
       }
       else if (error.request) {
-        notify.show("Request not made", 'error', 4000);
+        console.log("The request has not been made");
       }
     });
 
