@@ -12,12 +12,12 @@ export default class Head extends Component {
 
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <a className="nav-item nav-link active pad" href="#">Home <span className="sr-only">(current)</span></a>
+            <a className="nav-item nav-link active pad" href="/">Home <span className="sr-only">(current)</span></a>
             <a className="nav-item nav-link pad" href="/">Browse Events</a>
-            <a className="nav-item nav-link pad" href="#">Create Events</a>
-            <a className="nav-item nav-link pad" href="#">My Events</a>
+            <a className="nav-item nav-link pad" href="/create-event">Create Events</a>
+            <a className="nav-item nav-link pad" href="/">My Events</a>
             <a className="nav-item nav-link pad" href="/login">Sign In</a>
-            <a className="nav-item nav-link pad" href="/register">Sign Out</a>
+            <a className="nav-item nav-link pad" href="/register">Register</a>
           </div>
         </div>
 
