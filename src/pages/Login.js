@@ -1,8 +1,4 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import Register from './Register';
-import ResetPassword from './ResetPassword';
-
 import logo from "../assets/images/bevlogo.png";
 
 export default class Login extends Component {

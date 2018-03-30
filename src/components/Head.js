@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Nav, NavItem, NavLink } from 'reactstrap';
 
 export default class Head extends Component {
   render() {

@@ -10,7 +10,7 @@ export default class Event extends Component {
   render(){
     return (
       <div className="event">
-        <img className="event-img" src={thumbnail}/>
+        <img className="event-img" src={thumbnail} alt="thumbnail"/>
         <div className="event-content">
           <EditEvent/>
           <h4 className="custom-event-styling">{this.props.title}</h4>

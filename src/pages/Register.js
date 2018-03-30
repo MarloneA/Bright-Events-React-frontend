@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Notifications, { notify } from 'react-notify-toast';
-import axios from 'axios';
 import {connect} from "react-redux"
 import logo from "../assets/images/bevlogo.png";
-import { networkRequest,registerUser } from '../actions/authentication.actions';
+import { networkRequest, registerUser } from '../actions/authentication.actions';
 import "./../../src/assets/css/loader.css"
  class Register extends Component {
 

@@ -1,11 +1,5 @@
 import React, {Component} from 'react';
-// import Client from 'node-rest-client'
-
 import Event from './Event';
-import EditEvent from './EditEvent';
-import Rsvp from './Rsvp';
-
-import thumbnail from '../assets/images/dinner.jpg'
 
 export default class Events extends Component {
 

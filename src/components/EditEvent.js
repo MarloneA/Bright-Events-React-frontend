@@ -15,7 +15,7 @@ export default class EditEvent extends Component {
 							</div>
 
 							<div className="modal-body">
-								<form className="form-horizontal" role="form">
+								<form className="form-horizontal">
 									<div className="form-group">
 										<div className="col-sm-12">
 											<input className="form-control" id="inputText" placeholder="Title" type="text"/>
