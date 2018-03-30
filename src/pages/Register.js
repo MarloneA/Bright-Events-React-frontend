@@ -2,51 +2,49 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Notifications, { notify } from 'react-notify-toast';
 import axios from 'axios';
-
+import {connect} from "react-redux"
 import logo from "../assets/images/bevlogo.png";
+import { networkRequest,registerUser } from '../actions/authentication.actions';
+import "./../../src/assets/css/loader.css"
+ class Register extends Component {
 
-export default class Register extends Component {
+  constructor(props){
+    super(props);
+    this.handleRegister = this.handleRegister.bind(this)
+  }
 
-  constructor(){
-    super();
-    this.state = {
-      firstName:"",
-      lastName:"",
-      email:"",
-      password:""
+
+  handleRegister(e){
+    e.preventDefault();
+    const {dispatch} = this.props;
+    const {firstname,lastname,email,password} = this.refs;
+
+    const userData = {
+      firstName:firstname.value,
+      lastName:lastname.value,
+      email:email.value,
+      password:password.value
     }
+    console.log("the data is ", userData)
+    dispatch(registerUser(userData))  
   }
 
-  handleInputChange = (event) => {
-    const {name, value} = event.target;
-    this.setState({[name]:value});
-  }
-
-  handleRegister = (event) => {
-    const {firstName, lastName, email, password} = this.state;
-    event.preventDefault();
-
-    axios.post("http://localhost:5000/api/v2/auth/register",{firstName, lastName, email, password})
-    .then(response => {
-      notify.show(response.data.message, 'success', 4000);
-      this.props.history.push('/login');
-    })
-    .catch(error => {
-      if (error.response){
-        notify.show(error.response.data.message, 'error', 4000);
-      }
-      else if (error.request) {
-        console.log("The request has not been made");
-      }
-    });
-
-  }
 
   render(){
-    const {firstName, lastName, email, password} = this.state;
+  const {loading} = this.props;
+
+  if(loading){
+  return (
+    <div className="ui segment">
+    <div className="ui active dimmer">
+      <div className="ui text loader">Signing UP .......</div>
+    </div>
+  </div>
+  )
+}
+ 
 
     return (
-
         <form onSubmit={this.handleRegister} className="form-signin">
           <div className="text-center mb-4">
             <img className="mb-4" src={logo} alt="" width="72" height="72"/>
@@ -54,26 +52,28 @@ export default class Register extends Component {
           </div>
 
           <div className="form-label-group">
-            <input onChange={this.handleInputChange} name='firstName' value={firstName} type="text" id="firstName" className="form-control" placeholder="First name" required autofocus/>
+            <input ref='firstname'  name='firstName'  type="text" id="firstName" className="form-control" placeholder="First name" required />
             <label htmlFor="firstName">First name</label>
           </div>
 
           <div className="form-label-group">
-            <input onChange={this.handleInputChange} name='lastName' value={lastName} type="text" id="lastname" className="form-control" placeholder="Last Name" required autofocus/>
+            <input ref='lastname'  name='lastName'  type="text" id="lastname" className="form-control" placeholder="Last Name" required />
             <label htmlFor="lastname">Last Name</label>
           </div>
 
           <div className="form-label-group">
-            <input onChange={this.handleInputChange} name='email' value={email} type="email" id="inputEmail" className="form-control" placeholder="Email address" required autofocus/>
+            <input ref='email'  name='email'  type="email" id="inputEmail" className="form-control" placeholder="Email address" required />
             <label htmlFor="inputEmail">Email address</label>
           </div>
 
           <div className="form-label-group">
-            <input onChange={this.handleInputChange} name="password" value={password} type="password" id="inputPassword" className="form-control" placeholder="Password" required/>
+            <input ref='password'  name="password"  type="password" id="inputPassword" className="form-control" placeholder="Password" required/>
             <label htmlFor="inputPassword">Password</label>
           </div>
 
-          <button className="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+          <button className="btn btn-lg btn-primary btn-block" type="submit">Sign up </button>
+
+          <span hidden={!loading}>Dude, You are now safe .......</span>
           <p className="login-navigate"><a href="/login">Already have an account? Login here</a></p>
           <p className="login-navigate"><a href="/">Mainpage <span className="arrow-right icon"/></a></p>
 
@@ -82,3 +82,10 @@ export default class Register extends Component {
     )
   }
 }
+
+const mapStateToProps = state=> ({
+  loading:state.loading
+})
+
+
+export default connect(mapStateToProps)(Register) 
