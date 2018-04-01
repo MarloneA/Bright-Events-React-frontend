@@ -1,7 +1,7 @@
-import {combineReducers} from "redux"
-import loading from "./loading.reducer"
+import { combineReducers } from "redux";
+import { registration } from './registration.reducer';
 
-export default combineReducers({
-    loading
+const rootReducer = combineReducers({
+    registration
 })
-
+export default rootReducer; 

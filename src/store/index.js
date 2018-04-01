@@ -1,7 +1,13 @@
-import {createStore} from "redux"
-import {applyMiddleware} from "redux"
-import thunk from "redux-thunk"
-import logger from "./../middlewares/logger.middleware"
-import reducers from "./../reducers"
+import {createStore} from "redux";
+import {applyMiddleware} from "redux";
+import thunk from "redux-thunk";
+import logger from "./../middlewares/logger.middleware";
+import rootReducer from "../reducers";
 
-export default createStore(reducers, applyMiddleware(logger, thunk))
+export default createStore(
+    rootReducer, 
+    applyMiddleware(
+        // logger,
+        thunk
+    )
+)
