@@ -7,7 +7,7 @@ export default class Login extends Component {
       <form className="form-signin">
         <div className="text-center mb-4">
           <img className="mb-4" src={logo} alt="bev logo" width="72" height="72"/>
-          <h1 className="h3 mb-3 font-weight-normal" id="ghostwhite">Please Sign In</h1>
+          <h1 className="h3 mb-3 font-weight-normal" id="ghostwhite">Sign In</h1>
         </div>
 
         <div className="form-label-group">

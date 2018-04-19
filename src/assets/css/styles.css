@@ -469,6 +469,10 @@ select.form-control:not([size]):not([multiple]) {
 .mb-4{
   border-radius: 10px;
 }
+#pass-info{
+  padding: 10px;
+  margin: 0 38px 0 38px;
+}
 /*.custom-form{
     margin: 10px;
     padding: 15px;
