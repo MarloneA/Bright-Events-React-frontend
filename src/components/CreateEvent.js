@@ -1,9 +1,7 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 
 export default class CreateEvent extends Component {
-
-
-  render(){
+  render () {
     return (
       <form className="form-horizontal custom-create-events" action="/action_page.php">
         <div className="form-group">
