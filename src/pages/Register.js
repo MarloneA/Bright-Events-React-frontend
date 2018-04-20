@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import logo from '../assets/images/bevlogo.png'
-import { networkRequest, registerUser } from '../actions/user.actions'
 import './../../src/assets/css/loader.css'
 import { userActions } from '../actions'
 

@@ -6,21 +6,21 @@ export const userService = {
   register
 }
 
-function login (username, password) {
-  let url = '/users/authenticate'
+function login (user) {
+  let url = 'https://andela-brightevents.herokuapp.com/api/v2/auth/login'
 
   const request = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ username, password })
+    mode: 'no-cors',
+    body: JSON.stringify(user)
   }
 
   const response = fetch(url, request)
     .then(response => {
       if (!response.ok) {
-        return ''
+        return Promise.reject(response.statusText)
       }
-
       return response.json()
     })
     .then(user => {
