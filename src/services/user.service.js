@@ -1,4 +1,3 @@
-import { authHeader } from '../helpers'
 
 export const userService = {
   login,
@@ -7,33 +6,29 @@ export const userService = {
 }
 
 function login (user) {
-  let url = 'https://andela-brightevents.herokuapp.com/api/v2/auth/login'
-
-  const request = {
+  const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    mode: 'no-cors',
     body: JSON.stringify(user)
   }
 
-  const response = fetch(url, request)
+  return fetch('https://andela-brightevents.herokuapp.com/api/v2/auth/login', requestOptions)
     .then(response => {
       if (!response.ok) {
         return Promise.reject(response.statusText)
       }
+
       return response.json()
     })
-    .then(user => {
-      // login successful if there's a jwt token in the response
-      if (user && user.token) {
+    .then(
+      user => {
+        if (user && user.token) {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
-        localStorage.setItem('user', JSON.stringify(user))
-      }
+          localStorage.setItem('user', JSON.stringify(user.token))
+        }
 
-      return user
-    })
-
-  return response
+        return user.token
+      })
 }
 
 function logout () {
@@ -41,20 +36,13 @@ function logout () {
 }
 
 function register (user) {
-  let url = 'https://andela-brightevents.herokuapp.com/api/v2/auth/register'
-
-  const requestData = {
+  const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    mode: 'no-cors', // no-cors, cors, *same-origin
     body: JSON.stringify(user)
   }
 
-  return fetch(url, requestData).then(handleResponse).catch(
-    error => {
-      console.log(error)
-    }
-  )
+  return fetch('https://andela-brightevents.herokuapp.com/api/v2/auth/register', requestOptions).then(handleResponse)
 }
 
 function handleResponse (response) {

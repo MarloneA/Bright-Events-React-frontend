@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Router, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { history } from './helpers'
+import { alertActions } from './actions'
 
 import Home from './pages/Home'
 import { Login } from './pages/Login'
@@ -8,21 +11,45 @@ import ResetPassword from './pages/ResetPassword'
 import NewEvent from './pages/NewEvent'
 
 import './assets/css/styles.css'
-import Test from "./pages/Test";
 
-export default class App extends Component {
+class App extends Component {
+  constructor (props) {
+    super(props)
+
+    const { dispatch } = this.props
+    history.listen((location, action) => {
+      // clear alert on location change
+      dispatch(alertActions.clear())
+    })
+  }
+
   render () {
+    const { alert } = this.props
     return (
-      <Router>
+
+      <Router history={history}>
         <div className="custom-pg-background">
+          {alert.message &&
+                  <div id="cs-alert" className={`alert ${alert.type}`}>{alert.message}</div>
+          }
           <Route exact path="/" component={Home}/>
           <Route path="/login" component={Login}/>
           <Route path="/register" component={Register}/>
           <Route path="/reset-password" component={ResetPassword}/>
           <Route path="/create-event" component={NewEvent}/>
-          <Route path="/test" component={Test}/>
         </div>
       </Router>
+
     )
   };
 }
+
+function mapStateToProps (state) {
+  const { alert } = state
+  return {
+    alert
+  }
+}
+
+const connectedApp = connect(mapStateToProps)(App)
+export { connectedApp as App }

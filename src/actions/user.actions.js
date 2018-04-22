@@ -19,7 +19,6 @@ function login (user) {
         user => {
           dispatch(success(user))
           history.push('/')
-          dispatch(alertActions.success('Login successful'))
         },
         error => {
           dispatch(failure(error))
@@ -51,24 +50,19 @@ function register (user) {
     userService.register(user)
       .then(
         response => {
-          dispatch(success(response))
+          dispatch(success())
           history.push('/login')
-          dispatch(alertActions.success(response.data.message))
-        },
-        error => {
-          dispatch(failure(error))
-          dispatch(alertActions.error(error))
+          dispatch(alertActions.success(response.message))
+        }
+      ).catch(
+        err => {
+          dispatch(failure(err))
+          dispatch(alertActions.error(err))
         }
       )
   }
 
-  function request (user) {
-    return { type: userConstants.REGISTER_REQUEST, user }
-  }
-  function success (response) {
-    return { type: userConstants.REGISTER_SUCCESS, response }
-  }
-  function failure (error) {
-    return { type: userConstants.REGISTER_FAILURE, error }
-  }
+  function request (user) { return { type: userConstants.REGISTER_REQUEST, user } }
+  function success (user) { return { type: userConstants.REGISTER_SUCCESS, user } }
+  function failure (error) { return { type: userConstants.REGISTER_FAILURE, error } }
 }

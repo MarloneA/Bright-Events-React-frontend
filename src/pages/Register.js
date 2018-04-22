@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import logo from '../assets/images/bevlogo.png'
-import './../../src/assets/css/loader.css'
 import { userActions } from '../actions'
 
 class Register extends Component {
@@ -14,8 +13,7 @@ class Register extends Component {
         lastName: '',
         email: '',
         password: ''
-      },
-      submitted: false
+      }
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -47,7 +45,7 @@ class Register extends Component {
 
   render () {
     const { registering } = this.props
-    const { user, submitted } = this.state
+    const { user } = this.state
 
     return (
       <form onSubmit={this.handleSubmit} className="form-signin">
@@ -77,7 +75,9 @@ class Register extends Component {
         </div>
 
         <button className="btn btn-lg btn-primary btn-block" type="submit">Sign up </button>
-        { registering }
+        { registering &&
+            <img alt="gif" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        }
         <p className="login-navigate"><a href="/login">Already have an account? Login here</a></p>
         {/*<p className="login-navigate"><a href="/">Mainpage <span className="arrow-right icon"/></a></p>*/}
 

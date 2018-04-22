@@ -10,15 +10,12 @@ class Login extends Component {
       user: {
         email: '',
         password: ''
-      },
-      submitted: false
+      }
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   handleChange (e) {
-    // const { name, value } = e.target
-    // this.setState({ [name]: value })
     const { name, value } = e.target
     const { user } = this.state
     this.setState({
@@ -45,7 +42,7 @@ class Login extends Component {
 
   render () {
     const { loggingIn } = this.props
-    const { user, submitted } = this.state
+    const { user } = this.state
     return (
       <form onSubmit={this.handleSubmit} className="form-signin">
         <div className="text-center mb-4">
@@ -72,7 +69,6 @@ class Login extends Component {
         { loggingIn }
         <p className="login-navigate"><a href="/register">New User? Register</a></p>
         <p className="login-navigate password"><a href="/reset-password">Forgot password?</a></p>
-        {/*<p className="login-navigate"><a href="/">Mainpage <span className="arrow-right icon"></span></a></p>*/}
 
       </form>
 
