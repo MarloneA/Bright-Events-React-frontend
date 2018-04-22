@@ -40,7 +40,6 @@ class Login extends Component {
 
     if (user.email && user.password) {
       dispatch(userActions.login(user))
-      this.props.history.push('/')
     }
   }
 
@@ -73,7 +72,7 @@ class Login extends Component {
         { loggingIn }
         <p className="login-navigate"><a href="/register">New User? Register</a></p>
         <p className="login-navigate password"><a href="/reset-password">Forgot password?</a></p>
-        <p className="login-navigate"><a href="/">Mainpage <span className="arrow-right icon"></span></a></p>
+        {/*<p className="login-navigate"><a href="/">Mainpage <span className="arrow-right icon"></span></a></p>*/}
 
       </form>
 

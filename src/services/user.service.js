@@ -50,7 +50,11 @@ function register (user) {
     body: JSON.stringify(user)
   }
 
-  return fetch(url, requestData).then(handleResponse)
+  return fetch(url, requestData).then(handleResponse).catch(
+    error => {
+      console.log(error)
+    }
+  )
 }
 
 function handleResponse (response) {

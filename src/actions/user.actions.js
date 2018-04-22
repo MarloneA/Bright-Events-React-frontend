@@ -2,6 +2,8 @@ import { userConstants } from '../constants'
 import { userService } from '../services'
 import { alertActions } from './'
 
+import { history } from '../helpers'
+
 export const userActions = {
   login,
   logout,
@@ -16,6 +18,7 @@ function login (user) {
       .then(
         user => {
           dispatch(success(user))
+          history.push('/')
           dispatch(alertActions.success('Login successful'))
         },
         error => {
@@ -25,9 +28,15 @@ function login (user) {
       )
   }
 
-  function request (user) { return { type: userConstants.LOGIN_REQUEST, user } }
-  function success (user) { return { type: userConstants.LOGIN_SUCCESS, user } }
-  function failure (error) { return { type: userConstants.LOGIN_FAILURE, error } }
+  function request (user) {
+    return { type: userConstants.LOGIN_REQUEST, user }
+  }
+  function success (user) {
+    return { type: userConstants.LOGIN_SUCCESS, user }
+  }
+  function failure (error) {
+    return { type: userConstants.LOGIN_FAILURE, error }
+  }
 }
 
 function logout () {
@@ -38,11 +47,13 @@ function logout () {
 function register (user) {
   return dispatch => {
     dispatch(request(user))
+
     userService.register(user)
       .then(
-        user => {
-          dispatch(success(user))
-          dispatch(alertActions.success('Registration successful'))
+        response => {
+          dispatch(success(response))
+          history.push('/login')
+          dispatch(alertActions.success(response.data.message))
         },
         error => {
           dispatch(failure(error))
@@ -51,7 +62,13 @@ function register (user) {
       )
   }
 
-  function request (user) { return { type: userConstants.REGISTER_REQUEST, user } }
-  function success (user) { return { type: userConstants.REGISTER_SUCCESS, user } }
-  function failure (error) { return { type: userConstants.REGISTER_FAILURE, error } }
+  function request (user) {
+    return { type: userConstants.REGISTER_REQUEST, user }
+  }
+  function success (response) {
+    return { type: userConstants.REGISTER_SUCCESS, response }
+  }
+  function failure (error) {
+    return { type: userConstants.REGISTER_FAILURE, error }
+  }
 }

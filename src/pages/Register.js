@@ -25,6 +25,7 @@ class Register extends Component {
   handleChange (e) {
     const { name, value } = e.target
     const { user } = this.state
+
     this.setState({
       user: {
         ...user,
@@ -41,7 +42,6 @@ class Register extends Component {
 
     if (user.firstName && user.lastName && user.email && user.password) {
       dispatch(userActions.register(user))
-      this.props.history.push('/login')
     }
   }
 
@@ -79,7 +79,7 @@ class Register extends Component {
         <button className="btn btn-lg btn-primary btn-block" type="submit">Sign up </button>
         { registering }
         <p className="login-navigate"><a href="/login">Already have an account? Login here</a></p>
-        <p className="login-navigate"><a href="/">Mainpage <span className="arrow-right icon"/></a></p>
+        {/*<p className="login-navigate"><a href="/">Mainpage <span className="arrow-right icon"/></a></p>*/}
 
       </form>
 
@@ -94,5 +94,5 @@ function mapStateToProps (state) {
   }
 }
 
-const connectedRegisterpage = connect(mapStateToProps)(Register)
-export { connectedRegisterpage as Register }
+const connectedRegisterpage = connect(mapStateToProps)(Register);
+export { connectedRegisterpage as Register };
