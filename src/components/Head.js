@@ -1,19 +1,7 @@
 import React, {Component} from 'react'
-import {userActions} from '../actions'
-import { history } from "../helpers";
+import Logout from './Logout'
 
 export default class Head extends Component {
-  constructor (props) {
-    super(props)
-
-    this.handleClick = this.handleClick.bind(this)
-  }
-  handleClick (e) {
-    e.preventDefault()
-    localStorage.removeItem('user')
-    history.push('/login')
-  }
-
   render () {
     return (
 
@@ -30,9 +18,8 @@ export default class Head extends Component {
             <a className="nav-item nav-link pad" href="/">My Events</a>
             <a className="nav-item nav-link pad" href="/login">Sign In</a>
             <a className="nav-item nav-link pad" href="/register">Register</a>
-
           </div>
-          <input onClick={this.handleClick} type="button" value="Logout" className="nav-item nav-link pad cs-logout"/>
+          <Logout/>
         </div>
 
       </nav>

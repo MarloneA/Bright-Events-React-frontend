@@ -2,8 +2,8 @@ export function authHeader () {
   // return authorization header with jwt token
   let user = JSON.parse(localStorage.getItem('user'))
 
-  if (user && user.token) {
-    return { 'token': user.token }
+  if (user) {
+    return { 'token': user }
   } else {
     return {}
   }
