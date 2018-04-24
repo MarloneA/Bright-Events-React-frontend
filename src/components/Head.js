@@ -16,8 +16,8 @@ export default class Head extends Component {
             <a className="nav-item nav-link pad" href="/">Browse Events</a>
             <a className="nav-item nav-link pad" href="/create-event">Create Events</a>
             <a className="nav-item nav-link pad" href="/">My Events</a>
-            <a className="nav-item nav-link pad" href="/login">Sign In</a>
-            <a className="nav-item nav-link pad" href="/register">Register</a>
+            {/*<a className="nav-item nav-link pad" href="/login">Sign In</a>*/}
+            {/*<a className="nav-item nav-link pad" href="/register">Register</a>*/}
           </div>
           <Logout/>
         </div>

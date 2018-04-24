@@ -317,8 +317,6 @@ body{
 
   }
 
-
-
 /*
   ---------------------------------------
   CSS ARROW
@@ -346,8 +344,6 @@ body{
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
-
-
 
 /*
   -------------------------------------------
@@ -478,15 +474,8 @@ select.form-control:not([size]):not([multiple]) {
   margin: auto;
 }
 .cs-logout{
-    margin-left:28%;
+    margin-left:45%;
 }
-/*.custom-form{
-    margin: 10px;
-    padding: 15px;
-    margin-left: 0;
-}*/
-
-
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
