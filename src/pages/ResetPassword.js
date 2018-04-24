@@ -7,7 +7,7 @@ export default class ResetPassword extends Component {
       <div className="text-center mb-4">
         <img className="mb-4" src={logo} alt="" width="72" height="72"/>
         <h1 className="h3 mb-3 font-weight-normal" id="ghostwhite">Password Reset</h1>
-          <p id="pass-info">If you've forgotten your password, we'll send you an email to reset your password.</p>
+        <p id="pass-info">If you've forgotten your password, we'll send you an email to reset your password.</p>
       </div>
 
       <div className="form-label-group">

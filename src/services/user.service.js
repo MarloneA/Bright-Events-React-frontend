@@ -21,18 +21,26 @@ function login (user) {
       return response.json()
     })
     .then(
-      user => {
-        if (user && user.token) {
+      res => {
+        if (res && res.user.token) {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
-          localStorage.setItem('user', JSON.stringify(user.token))
+          localStorage.setItem('user', JSON.stringify(res.user.token))
         }
 
-        return user.token
+        return res.user
       })
 }
 
 function logout () {
-  localStorage.removeItem('user')
+  let token = JSON.parse(localStorage.getItem('user'))
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-access-token': token
+    }
+  }
+  return fetch('https://andela-brightevents.herokuapp.com/api/v2/auth/logout', requestOptions).then(handleResponse)
 }
 
 function register (user) {

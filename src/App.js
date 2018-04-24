@@ -5,7 +5,7 @@ import { history } from './helpers'
 import { alertActions } from './actions'
 
 import { PrivateRoute } from './components/PrivateRoute'
-import Home from './pages/Home'
+import  Home  from './pages/Home'
 import { Login } from './pages/Login'
 import { Register } from './pages/Register'
 import ResetPassword from './pages/ResetPassword'
