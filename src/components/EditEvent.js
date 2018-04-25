@@ -5,7 +5,9 @@ export default class EditEvent extends Component {
     return (
 
       <div>
+        <button className="custom-btn edit btn btn-sm" data-target="#myModal" data-toggle="modal">Delete</button>
         <button className="custom-btn edit btn btn-sm" data-target="#myModal" data-toggle="modal">Edit</button>
+
         <div aria-hidden="true" aria-labelledby="myModalLabel" className="modal fade" id="myModal" role="dialog" tabIndex="-1">
           <div className="modal-dialog">
             <div className="modal-content">
