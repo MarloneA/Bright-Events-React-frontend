@@ -476,6 +476,9 @@ select.form-control:not([size]):not([multiple]) {
 .cs-logout{
     margin-left:45%;
 }
+.cs-dcon{
+    width:68%;
+}
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */

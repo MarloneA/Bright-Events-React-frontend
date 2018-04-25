@@ -1,47 +1,47 @@
 import React, {Component} from 'react'
-import Event from './Event'
+import EditEvent from './EditEvent'
+import Rsvp from './Rsvp'
+
+import thumbnail from '../assets/images/dinner.jpg'
 
 export default class Events extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
-
-      events: [
-        {
-          id: 1123453,
-          title: 'The great Gatsby',
-          date: 'Event on 12/04/2018',
-          description: 'This project is broken down into 4 challenges whose completion would contribute greatly to your learning towards becoming a full-stack developer. Upon completion, you would have built a world-class full-stack (frontend and backend) Python and JavaScript application. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-          created: ' Created on 05/03/2018'
-        },
-        {
-          id: 1123675,
-          title: 'Rick and Morty',
-          date: 'Event on 12/04/2018',
-          description: 'This project is broken down into 4 challenges whose completion would contribute greatly to your learning towards becoming a full-stack developer. Upon completion, you would have built a world-class full-stack (frontend and backend) Python and JavaScript application. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-          created: ' Created on 27/03/2018'
-        },
-        {
-          id: 1123756,
-          title: 'Raiders of the Lost Arc',
-          date: 'Event on 12/04/2018',
-          description: 'This project is broken down into 4 challenges whose completion would contribute greatly to your learning towards becoming a full-stack developer. Upon completion, you would have built a world-class full-stack (frontend and backend) Python and JavaScript application. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-          created: ' Created on 27/03/2018'
-        }
-      ]
+      events: []
     }
+  }
+  componentWillMount () {
+    fetch('https://andela-brightevents.herokuapp.com/api/v2/events').then(
+      res => {
+        return res.json()
+      }
+    ).then(
+      data => {
+        this.setState({events: data.Events})
+      }
+    )
   }
 
   render () {
-    const { events } = this.state
-
-    const Content = events.map((event) => {
-      return <Event key={event.id} {...event}/>
-    })
-
+    const content = this.state.events.map(
+      event => (
+        <div className="event" key={event.id}>
+          <img className="event-img" src={thumbnail} alt="thumbnail"/>
+          <div className="event-content">
+            <EditEvent/>
+            <h4 className="custom-event-styling">{event.title}</h4>
+            <h6 className="custom-event-styling">{'Date of Event: ' + event.date_of_event}</h6>
+            <p className="custom-event-styling-par">{event.description}</p>
+            <h6 className="custom-event-styling cs-dcon">{'Created on: ' + event.created_on}</h6>
+            <Rsvp/>
+          </div>
+        </div>
+      )
+    )
     return (
       <div className="custom-main-content">
-        <div>{Content}</div>
+        {content}
         <div className="line"></div>
       </div>
     )
