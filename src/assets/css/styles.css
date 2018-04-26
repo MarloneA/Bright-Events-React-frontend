@@ -5,6 +5,14 @@ body{
   font-family: 'Raleway', sans-serif;
   background: #0a0a091f;
 }
+a{
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit;
+}
+a:hover{
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit;
+}
 
 /* ---------------------------------------------------
     SIDEBAR STYLE
@@ -470,7 +478,18 @@ select.form-control:not([size]):not([multiple]) {
 .login-navigate{
   display: inline-block;
   margin:15px;
+    padding: 20px;
+    margin: 69px;
+    border: 1px solid;
+    padding-bottom: 25px;
+    margin-left: 95px;
 
+}
+.login-navigate:hover{
+    color: #ebbd5a;
+    font-weight: 900;
+    background-color: #602314;
+    cursor: pointer;
 }
 .password{
   float:right;
@@ -512,6 +531,61 @@ select.form-control:not([size]):not([multiple]) {
     font-size: 11px;
     padding: 15px;
 }
+.cs-subscribe:hover{
+    background-color: #495057;
+}
+.cs-subscrib:focus{
+    background-color: #495057;
+    color: #ebbd5a;
+}
+
+
+/* --------------------------
+Single event styling
+-----------------------------*/
+.cs-main{
+    padding-top: 50px;
+    height: 100%;
+    width: 100%;
+
+    background: -webkit-gradient(linear, 0deg, color-stop(50%, FFFFFF), color-stop(0, 821F0C));/* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(0deg, #FFFFFF 50%, #821F0C 0);/* Chrome10+,Safari5.1+ */
+
+    background: linear-gradient(0deg, #FFFFFF 50%, #821F0C 0);/* W3C */
+}
+.cs-evnt-card{
+    width: 1080px;
+}
+.cs-img-desc{
+    height: 360px;
+    background: rgb(86,26,68);
+}
+.cs-desc{
+    background: white;
+}
+.map{
+    height: 390px;
+    background: grey;
+    padding-left: 0;
+}
+.cs-image{
+    background: blue;
+}
+.cs-detail{
+    background: white;
+    padding: 20px;
+}
+.cs-detail > b {
+    font-size: 30px;
+}
+.cs-desc-detail{
+    padding: 5%;
+}
+.cs-desc-date{
+    padding: 5%;
+}
+
+
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */

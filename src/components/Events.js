@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from 'react-router-dom';
 import EditEvent from './EditEvent'
 import Rsvp from './Rsvp'
 
@@ -27,15 +28,17 @@ export default class Events extends Component {
     const content = this.state.events.map(
       event => (
         <div className="event" key={event.id}>
-          <img className="event-img" src={thumbnail} alt="thumbnail"/>
-          <div className="event-content">
-            <EditEvent/>
-            <h4 className="custom-event-styling">{event.title}</h4>
-            <h6 className="custom-event-styling">{'Date of Event: ' + event.date_of_event}</h6>
-            <p className="custom-event-styling-par">{event.description}</p>
-            <h6 className="custom-event-styling cs-dcon">{'Created on: ' + event.created_on}</h6>
-            <Rsvp/>
-          </div>
+          <Link to={'/events/' + event.id}>
+            <img className="event-img" src={thumbnail} alt="thumbnail"/>
+            <div className="event-content">
+              <EditEvent/>
+              <h4 className="custom-event-styling">{event.title}</h4>
+              <h6 className="custom-event-styling">{'Date of Event: ' + event.date_of_event}</h6>
+              <p className="custom-event-styling-par">{event.description}</p>
+              <h6 className="custom-event-styling cs-dcon">{'Created on: ' + event.created_on}</h6>
+              <Rsvp/>
+            </div>
+          </Link>
         </div>
       )
     )
