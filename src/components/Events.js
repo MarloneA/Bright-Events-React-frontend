@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
-import { Link } from 'react-router-dom';
-import EditEvent from './EditEvent'
+import { Link } from 'react-router-dom'
 import Rsvp from './Rsvp'
 
 import thumbnail from '../assets/images/dinner.jpg'
@@ -31,7 +30,6 @@ export default class Events extends Component {
           <Link to={'/events/' + event.id}>
             <img className="event-img" src={thumbnail} alt="thumbnail"/>
             <div className="event-content">
-              <EditEvent/>
               <h4 className="custom-event-styling">{event.title}</h4>
               <h6 className="custom-event-styling">{'Date of Event: ' + event.date_of_event}</h6>
               <p className="custom-event-styling-par">{event.description}</p>

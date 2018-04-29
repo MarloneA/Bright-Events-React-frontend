@@ -10,9 +10,11 @@ import { Login } from './pages/Login'
 import { Register } from './pages/Register'
 import ResetPassword from './pages/ResetPassword'
 import NewEvent from './pages/NewEvent'
-import Event  from './components/Event'
+import Event from './components/Event'
 
 import './assets/css/styles.css'
+import Manage from './pages/Manage'
+import Edit from './pages/Edit'
 
 class App extends Component {
   constructor (props) {
@@ -40,6 +42,8 @@ class App extends Component {
           <Route path="/reset-password" component={ResetPassword}/>
           <Route path="/create-event" component={NewEvent}/>
           <Route path="/events/:id" component={Event}/>
+          <Route path="/manage-events" component={Manage}/>
+          <Route path="/edit-events" component={ Edit }/>
         </div>
       </Router>
 

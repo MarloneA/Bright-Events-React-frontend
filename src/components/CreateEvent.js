@@ -62,14 +62,6 @@ export default class CreateEvent extends Component {
             <input type="date" name="date" value={this.state.date} onChange={this.onChange} className="form-control custom-create-event-input" id="date" placeholder="Enter event date"/>
           </div>
         </div>
-
-        {/* <div className="form-group"> */}
-        {/* <label className="control-label col-sm-2" htmlFor="venue">Venue:</label> */}
-        {/* <div className="col-sm-10"> */}
-        {/* <input type="text" name="venue" value={this.state.venue} onChange={this.onChange} className="form-control custom-create-event-input" id="venue" placeholder="Where will you event be held at?"/> */}
-        {/* </div> */}
-        {/* </div> */}
-
         <div className="form-group">
           <label htmlFor="category" className="control-label custom-ce-label">Category:</label>
           <select name="category" value={this.state.category} onChange={this.onChange} className="form-control category-styling custom-ce-label">

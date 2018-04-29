@@ -478,14 +478,20 @@ select.form-control:not([size]):not([multiple]) {
 .login-navigate{
   display: inline-block;
   margin:15px;
+}
+.login-navigate:hover{
+    color: #ebbd5a;
+    font-weight: 900;
+    cursor: pointer;
+}
+.cs-nav-home{
     padding: 20px;
     margin: 69px;
     border: 1px solid;
     padding-bottom: 25px;
     margin-left: 95px;
-
 }
-.login-navigate:hover{
+.cs-nav-home:hover{
     color: #ebbd5a;
     font-weight: 900;
     background-color: #602314;
@@ -506,7 +512,7 @@ select.form-control:not([size]):not([multiple]) {
   margin: auto;
 }
 .cs-logout{
-    margin-left:45%;
+    margin-left:40%;
 }
 .cs-dcon{
     width:68%;

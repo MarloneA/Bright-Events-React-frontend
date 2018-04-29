@@ -1,14 +1,15 @@
 import React, {Component} from 'react'
+import {authHeader} from '../helpers/auth_header'
+import { Link } from 'react-router-dom'
 
 export default class EditEvent extends Component {
   render () {
     return (
-
       <div>
-        <button className="custom-btn edit btn btn-sm" data-target="#myModal" data-toggle="modal">Delete</button>
-        <button className="custom-btn edit btn btn-sm" data-target="#myModal" data-toggle="modal">Edit</button>
+        {/* <button className="custom-btn edit btn btn-sm" data-target="#myModal" data-toggle="modal">Delete</button> */}
+        <button onClick={this.handleClick} className="custom-btn edit btn btn-sm" data-target="#myModal" data-toggle="modal">Edit</button>
 
-        <div aria-hidden="true" aria-labelledby="myModalLabel" className="modal fade" id="myModal" role="dialog" tabIndex="-1">
+        <div aria-hidden="true" aria-labelledby="myModalLabel" className="modal fade" id="myModal" role="dialog" tabindex="-1">
           <div className="modal-dialog">
             <div className="modal-content">
 
