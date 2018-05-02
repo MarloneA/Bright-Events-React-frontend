@@ -32,7 +32,7 @@ class Event extends Component {
             <div className="col-md-4 cs-detail">
               <p>Event on: { date_of_event}</p>
               <b>{title}</b>
-              <p>{created_by}</p>
+              <p>Contact organizer at: {created_by}</p>
             </div>
           </div>
 

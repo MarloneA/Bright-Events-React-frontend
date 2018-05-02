@@ -37,12 +37,12 @@ class App extends Component {
                   <div id="cs-alert" className={`alert ${alert.type}`}>{alert.message}</div>
           }
           <PrivateRoute exact path="/" component={Home}/>
+          <PrivateRoute path="/manage-events" component={Manage}/>
+          <PrivateRoute path="/create-event" component={NewEvent}/>
           <Route path="/login" component={Login}/>
           <Route path="/register" component={Register}/>
           <Route path="/reset-password" component={ResetPassword}/>
-          <Route path="/create-event" component={NewEvent}/>
           <Route path="/events/:id" component={Event}/>
-          <Route path="/manage-events" component={Manage}/>
           <Route path="/edit-events" component={ Edit }/>
         </div>
       </Router>

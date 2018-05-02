@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { authHeader } from '../helpers/auth_header'
+import { history } from '../helpers'
+import {alertActions} from '../actions'
+import { dispatch } from 'redux'
 
 export default class CreateEvent extends Component {
   constructor (props) {
@@ -42,7 +45,7 @@ export default class CreateEvent extends Component {
       }
     ).then(
       data => {
-        console.log(data)
+        history.push(`/events/${data.event.id}`)
       }
     )
   }

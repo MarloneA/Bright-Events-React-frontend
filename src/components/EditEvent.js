@@ -3,6 +3,17 @@ import {authHeader} from '../helpers/auth_header'
 import { Link } from 'react-router-dom'
 
 export default class EditEvent extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      event: {}
+    }
+
+    this.handleClick = this.handleClick.bind(this)
+  }
+  handleClick (e) {
+    fetch()
+  }
   render () {
     return (
       <div>
