@@ -1,15 +1,17 @@
-import {createStore} from 'redux'
-import {applyMiddleware} from 'redux'
-import { createLogger } from 'redux-logger'
-import thunkMiddleware from 'redux-thunk'
+import { createStore } from 'redux'
+import { applyMiddleware, compose } from 'redux'
+import thunk from 'redux-thunk'
 import rootReducer from '../reducers'
 
-const loggerMiddleware = createLogger()
+const middleware = [ thunk ]
 
 export default createStore(
   rootReducer,
-  applyMiddleware(
-    thunkMiddleware,
-    loggerMiddleware
+  compose(
+    applyMiddleware(
+      ...middleware
+    ),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
+
 )

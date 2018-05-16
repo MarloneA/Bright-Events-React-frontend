@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {authHeader} from '../helpers/auth_header'
 
-
 import thumbnail from '../assets/images/dinner.jpg'
 import EditEvent from './EditEvent'
 
@@ -31,10 +30,14 @@ class ManageMyEvents extends Component {
     const content = this.state.events.map(
       event => (
         <div className="event" key={event.id}>
+          <a href="/edit-events" className="custom-btn edit btn btn-sm" >Edit</a>
           {/* <Link to={'/events/' + event.id}> */}
-          <img className="event-img" src={thumbnail} alt="thumbnail"/>
+          {/* <img className="event-img" src={thumbnail} alt="thumbnail"/> */}
+          <div className="event-img">
+            <p>Upload image ...</p>
+          </div>
           <div className="event-content">
-            <EditEvent/>
+            {/* <EditEvent/> */}
             <h4 className="custom-event-styling">{event.title}</h4>
             <h6 className="custom-event-styling">{'Date of Event: ' + event.date_of_event}</h6>
             <p className="custom-event-styling-par">{event.description}</p>

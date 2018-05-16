@@ -18,10 +18,10 @@ export default class Sidebar extends Component {
           <label htmlFor="category" className="style-label-category custom-filter-label-category">Filter by Category</label>
           <select className="form-control category-styling cs-subscrib" id="category">
             <option>...</option>
-            <option>Dance</option>
-            <option>Rap</option>
-            <option>Flamenco</option>
-            <option>Phrygian</option>
+            <option>Workshops</option>
+            <option>Science & Tech</option>
+            <option>Networking</option>
+            <option>Seminar</option>
           </select>
         </div>
         <div className="form-group">
@@ -35,9 +35,11 @@ export default class Sidebar extends Component {
           </select>
         </div>
         <div className="cs-promo">
-          <p>Want to be informed of the best events in your inbox? Then subscribe to our monthly newsletter! We promise we will not spam you</p>
-          <button className="custom-btn btn btn-default btn-lg cs-subscribe">Subscribe</button>
-          <p id="fp">All the best events in one place. You could also be a host. create an event today:</p>
+          {/*<p>Want to be informed of the best events in your inbox? Then subscribe to our monthly newsletter! We promise we will not spam you</p>*/}
+
+            <p id="fp">All the best events in one place. You could also be a host. create an event today:</p>
+
+            <button className="custom-btn btn btn-default btn-lg cs-subscribe"><a href="/create-event">Create Event</a></button>
         </div>
       </nav>
     )

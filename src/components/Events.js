@@ -28,7 +28,9 @@ export default class Events extends Component {
       event => (
         <div className="event" key={event.id}>
           <Link to={'/events/' + event.id}>
-            <img className="event-img" src={thumbnail} alt="thumbnail"/>
+            <div className="event-img">
+              <p>Upload image ...</p>
+            </div>
             <div className="event-content">
               <h4 className="custom-event-styling">{event.title}</h4>
               <h6 className="custom-event-styling">{'Date of Event: ' + event.date_of_event}</h6>

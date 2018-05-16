@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { authHeader } from '../helpers/auth_header'
 import { history } from '../helpers'
-import {alertActions} from '../actions'
 import { dispatch } from 'redux'
 
 export default class CreateEvent extends Component {
@@ -35,7 +34,7 @@ export default class CreateEvent extends Component {
     fetch('https://andela-brightevents.herokuapp.com/api/v2/events', {
       method: 'POST',
       headers: {
-        'content-type': 'application/json',
+        'Content-Type': 'application/json',
         'token': authHeader()['token']
       },
       body: JSON.stringify(post)
@@ -69,20 +68,20 @@ export default class CreateEvent extends Component {
           <label htmlFor="category" className="control-label custom-ce-label">Category:</label>
           <select name="category" value={this.state.category} onChange={this.onChange} className="form-control category-styling custom-ce-label">
             <option>...</option>
-            <option>Dance</option>
-            <option>Rap</option>
-            <option>Flamenco</option>
-            <option>Phrygian</option>
+            <option>Workshops</option>
+            <option>Science & Tech</option>
+            <option>Networking</option>
+            <option>Seminar</option>
           </select>
         </div>
         <div className="form-group">
           <label htmlFor="location" className="control-label custom-ce-label">Location:</label>
           <select name="location" value={this.state.location} onChange={this.onChange} className="form-control location-styling custom-ce-label">
             <option>...</option>
-            <option>Spain</option>
-            <option>Morroco</option>
-            <option>Abuja</option>
-            <option>Tunis</option>
+            <option>Nairobi</option>
+            <option>Mombasa</option>
+            <option>Nakuru</option>
+            <option>Kisumu</option>
           </select>
         </div>
 

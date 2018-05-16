@@ -27,7 +27,7 @@ class Event extends Component {
 
           <div className="row cs-img-desc">
             <div className="col-md-8 cs-img">
-
+              <p>Upload image ...</p>
             </div>
             <div className="col-md-4 cs-detail">
               <p>Event on: { date_of_event}</p>

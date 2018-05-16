@@ -25,8 +25,8 @@ a:hover{
 #sidebar {
     min-width: 345px;
     max-width: 345px;
-    background: #602115;
-    color: #E9BD72;
+    background: #e9ecef;
+    color: #0c0800;
     transition: all 0.3s;
 
     /*custom*/
@@ -47,7 +47,7 @@ a:hover{
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #602115;
+    background: #e9ecef;
 }
 
 #sidebar ul.components {
@@ -84,13 +84,13 @@ a:hover{
 .event{
   padding: 30px;
   line-height: 2;
-  margin-left: -15px;
+  margin-left: 2px;
   font-size: 13px;
 
 	}
   .event:hover{
-    background-color: #F79C16;
-    color: #fff;
+      background-color: #e9ecef;
+      color: #212529;
 
   }
 	.edit{
@@ -189,7 +189,7 @@ a:hover{
     margin-left: 10%;
   }
 .form-control {
-    border: 1px solid #e8bc70;
+    border: 1px solid black;
 }
   .search-input{
       width: 80%;
@@ -198,7 +198,7 @@ a:hover{
       margin-left: 33px;
       margin-top: 36px;
       border: none;
-      border-bottom: 1px solid #ffab00;
+      border-bottom: 1px solid black;
       background: transparent;
   }
   .style-label-category{
@@ -210,8 +210,8 @@ a:hover{
     width: 80%;
     margin: auto;
     height:50px;
-  background-color: #602215;
-  color: #febe53;
+  background-color: #fff;
+  color: black;
   }
   .style-label-location{
     margin-left: 10%;
@@ -222,8 +222,8 @@ a:hover{
     margin: auto;
     width: 81%;
     height: 48px;
-      background-color: #602215;
-      color: #febe53;
+      background-color: #fff;
+      color: black;
   }
   .content-nav-styling{
     margin-left: 27%;
@@ -237,12 +237,12 @@ a:hover{
       margin-left: 15px;
   }
   .line{
-    border:1px dotted #602115;
+    border:1px dotted black;
   }
   .btn:hover{
-    color: #ebbd5a;
-    font-weight: 900;
-    background-color: #602314;
+      color: #ffc107;
+      font-weight: 900;
+      background: #602315;
   }
 /*
   -------------------------------------------------
@@ -288,13 +288,19 @@ a:hover{
 
   }
   .event-img{
-    border: 1px solid black;
+    border: 1px solid #ced4da;
     float: left;
     height: 250px;
     width: 250px;
     margin-right: 35px;
     border-top-right-radius: 95px;
-    border-bottom-left-radius: 95px
+    border-bottom-left-radius: 95px;
+    text-align: center;
+  }
+  .event-img > p{
+      margin-top: 40%;
+      font-size: 120%;
+      color: #9c949d;
   }
   .custom-btn{
     border: 1px solid;
@@ -323,13 +329,13 @@ a:hover{
     padding:15px;
   }
   .custom-event-styling{
-    border-bottom: 1px solid black;
-    margin-left: 32%;
-    margin-right: 45%;
-    padding-bottom: 15px;
+      border-bottom: 1px solid black;
+      margin-left: 33%;
+      margin-right: 14%;
+      padding-bottom: 15px;
   }
   .custom-event-styling-par{
-    margin-left: 32%;
+    margin-left: 33%;
     margin-right: 0%;
     padding-bottom: 15px;
     border-bottom: 1px solid black;
@@ -460,8 +466,8 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .btn-primary{
-	background-color: #d88f09;
-	color: ghostwhite;
+  background-color: #d88f09;
+  color: ghostwhite;
   padding: 15px;
   border-color: black;
 }
@@ -512,7 +518,8 @@ select.form-control:not([size]):not([multiple]) {
   margin: auto;
 }
 .cs-logout{
-    margin-left:40%;
+    margin-left: 55%;
+    border: none;
 }
 .cs-dcon{
     width:68%;
@@ -530,21 +537,22 @@ select.form-control:not([size]):not([multiple]) {
     color: #ebbd5a;
     font-weight: 900;
     background-color: #602215;
+    padding: 10px;
 }
 .cs-promo > #fp{
     margin: auto;
     width: 90%;
-    font-size: 11px;
+    font-size: 13px;
     padding: 15px;
 }
 .cs-subscribe:hover{
     background-color: #495057;
 }
 .cs-subscrib:focus{
-    background-color: #495057;
-    color: #ebbd5a;
+    /*background-color: #495057;*/
+    /*color: #ebbd5a;*/
+    border: 1px solid white;
 }
-
 
 /* --------------------------
 Single event styling
@@ -557,14 +565,14 @@ Single event styling
     background: -webkit-gradient(linear, 0deg, color-stop(50%, FFFFFF), color-stop(0, 821F0C));/* Chrome,Safari4+ */
     background: -webkit-linear-gradient(0deg, #FFFFFF 50%, #821F0C 0);/* Chrome10+,Safari5.1+ */
 
-    background: linear-gradient(0deg, #FFFFFF 50%, #821F0C 0);/* W3C */
+    background: linear-gradient(0deg, #FFFFFF 65%, #821F0C 0);/* W3C */
 }
 .cs-evnt-card{
     width: 1080px;
 }
 .cs-img-desc{
     height: 360px;
-    background: rgb(86,26,68);
+    background: #e9ecef;
 }
 .cs-desc{
     background: white;
@@ -590,6 +598,13 @@ Single event styling
 .cs-desc-date{
     padding: 5%;
 }
+.cs-img > p {
+    text-align: center;
+    padding: 10px;
+    font-size: 50px;
+    color: #ced4da;
+    margin-top: 17%;
+}
 
 
 /* ---------------------------------------------------
@@ -604,7 +619,7 @@ Single event styling
     padding-top: 100px;
 }
 .search.icon {
-    color: #ebbd5a;
+    color: black;
     position: absolute;
     margin-top: 2px;
     margin-left: 3px;
