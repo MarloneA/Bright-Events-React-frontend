@@ -6,11 +6,12 @@ import Footer from '../components/Footer'
 
 class Edit extends Component {
   render () {
+      const {id} = this.props.match.params
     return (
       <div className="outline">
         <Sidebar/>
         <Head/>
-        <EditEvent/>
+        <EditEvent id={id}/>
         <Footer/>
       </div>
     )

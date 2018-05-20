@@ -562,13 +562,15 @@ Single event styling
     height: 100%;
     width: 100%;
 
-    background: -webkit-gradient(linear, 0deg, color-stop(50%, FFFFFF), color-stop(0, 821F0C));/* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(0deg, #FFFFFF 50%, #821F0C 0);/* Chrome10+,Safari5.1+ */
+    /*background: -webkit-gradient(linear, 0deg, color-stop(50%, FFFFFF), color-stop(0, 821F0C));!* Chrome,Safari4+ *!*/
+    /*background: -webkit-linear-gradient(0deg, #FFFFFF 50%, #821F0C 0);!* Chrome10+,Safari5.1+ *!*/
 
-    background: linear-gradient(0deg, #FFFFFF 65%, #821F0C 0);/* W3C */
+    /*background: linear-gradient(0deg, #FFFFFF 65%, #821F0C 0);!* W3C *!*/
 }
 .cs-evnt-card{
-    width: 1080px;
+    width: 72.55%;
+    margin-right: 1px;
+    margin-top: 18px;
 }
 .cs-img-desc{
     height: 360px;

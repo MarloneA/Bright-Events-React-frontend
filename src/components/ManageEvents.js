@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {authHeader} from '../helpers/auth_header'
+import { Link } from 'react-router-dom'
 
 import thumbnail from '../assets/images/dinner.jpg'
 import EditEvent from './EditEvent'
@@ -30,7 +31,7 @@ class ManageMyEvents extends Component {
     const content = this.state.events.map(
       event => (
         <div className="event" key={event.id}>
-          <a href="/edit-events" className="custom-btn edit btn btn-sm" >Edit</a>
+          <Link to={'/edit-events/' + event.id} className="custom-btn edit btn btn-sm" >Edit</Link>
           {/* <Link to={'/events/' + event.id}> */}
           {/* <img className="event-img" src={thumbnail} alt="thumbnail"/> */}
           <div className="event-img">

@@ -43,7 +43,7 @@ class App extends Component {
           <Route path="/register" component={Register}/>
           <Route path="/reset-password" component={ResetPassword}/>
           <Route path="/events/:id" component={Event}/>
-          <Route path="/edit-events" component={ Edit }/>
+          <Route path="/edit-events/:id" component={ Edit }/>
         </div>
       </Router>
 
