@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 
 class Edit extends Component {
   render () {
-      const {id} = this.props.match.params
+    const {id} = this.props.match.params
     return (
       <div className="outline">
         <Sidebar/>

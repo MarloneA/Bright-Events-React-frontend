@@ -37,7 +37,7 @@ function logout () {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'x-access-token': token
+      'token': token
     }
   }
   return fetch('https://andela-brightevents.herokuapp.com/api/v2/auth/logout', requestOptions).then(handleResponse)

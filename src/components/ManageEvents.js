@@ -2,9 +2,6 @@ import React, {Component} from 'react'
 import {authHeader} from '../helpers/auth_header'
 import { Link } from 'react-router-dom'
 
-import thumbnail from '../assets/images/dinner.jpg'
-import EditEvent from './EditEvent'
-
 class ManageMyEvents extends Component {
   constructor (props) {
     super(props)
@@ -32,19 +29,15 @@ class ManageMyEvents extends Component {
       event => (
         <div className="event" key={event.id}>
           <Link to={'/edit-events/' + event.id} className="custom-btn edit btn btn-sm" >Edit</Link>
-          {/* <Link to={'/events/' + event.id}> */}
-          {/* <img className="event-img" src={thumbnail} alt="thumbnail"/> */}
           <div className="event-img">
             <p>Upload image ...</p>
           </div>
           <div className="event-content">
-            {/* <EditEvent/> */}
             <h4 className="custom-event-styling">{event.title}</h4>
             <h6 className="custom-event-styling">{'Date of Event: ' + event.date_of_event}</h6>
             <p className="custom-event-styling-par">{event.description}</p>
             <h6 className="custom-event-styling cs-dcon">{'Created on: ' + event.created_on}</h6>
           </div>
-          {/* </Link> */}
         </div>
       )
     )

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import logo from '../assets/images/bevlogo.png'
+import Search from "./Search";
 
 export default class Sidebar extends Component {
   render () {
@@ -10,10 +11,7 @@ export default class Sidebar extends Component {
           <h3 className="sidebar-header-h3 custom-sidebar-h3">Bright Events</h3>
         </div>
         <h3 className="sidebar-header-share custom-sidebar-header-share">Connect Share Inspire</h3>
-        <form>
-          <input aria-label="Search" className="form-control mr-sm-2 search-input custom-search-input cs-subscrib" placeholder="Search" type="text"/>
-          <span className="search icon"></span>
-        </form>
+        <Search/>
         <div className="form-group custom-form-group">
           <label htmlFor="category" className="style-label-category custom-filter-label-category">Filter by Category</label>
           <select className="form-control category-styling cs-subscrib" id="category">
