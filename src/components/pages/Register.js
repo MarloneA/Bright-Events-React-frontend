@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
-import logo from "../assets/images/bevlogo.png"
-import { userActions } from "../actions"
+import logo from "../../assets/images/bevlogo.png"
+import { userActions } from "../../actions/index"
 
 class Register extends Component {
 	constructor (props) {

@@ -4,18 +4,19 @@ import { connect } from "react-redux"
 import { history } from "./helpers"
 import { alertActions } from "./actions"
 
-import { PrivateRoute } from "./components/PrivateRoute"
-import Home from "./pages/Home"
-import { Login } from "./pages/Login"
-import { Register } from "./pages/Register"
-import ResetPassword from "./pages/ResetPassword"
-import NewEvent from "./pages/NewEvent"
-import Event from "./components/Event"
+import { PrivateRoute } from "./components/presentation/PrivateRoute"
+import { Login } from "./components/pages/Login"
+import { Register } from "./components/pages/Register"
+import ResetPassword from "./components/pages/ResetPassword"
+import NewEvent from "./components/pages/NewEvent"
+import Event from "./components/presentation/Event"
 
 import "./assets/css/styles.css"
-import Manage from "./pages/Manage"
-import Edit from "./pages/Edit"
-import SearchPage from "./pages/SearchPage";
+// import Manage from "./components/pages/Manage"
+import Edit from "./components/pages/Edit"
+// import SearchPage from "./components/pages/SearchPage"
+import HomeContainer from "./components/container/HomeContainer"
+import ManageEventsContainer from "./components/container/ManageEventsContainer";
 
 class App extends Component {
 	constructor (props) {
@@ -37,15 +38,15 @@ class App extends Component {
 					{alert.message &&
                   <div id="cs-alert" className={`alert ${alert.type}`}>{alert.message}</div>
 					}
-					<PrivateRoute exact path="/" component={Home}/>
-					<PrivateRoute path="/manage-events" component={Manage}/>
+					<PrivateRoute exact path="/" component={HomeContainer}/>
+					<PrivateRoute path="/manage-events" component={ManageEventsContainer}/>
 					<PrivateRoute path="/create-event" component={NewEvent}/>
 					<Route path="/login" component={Login}/>
 					<Route path="/register" component={Register}/>
 					<Route path="/reset-password" component={ResetPassword}/>
 					<Route path="/events/:id" component={Event}/>
 					<Route path="/edit-events/:id" component={ Edit }/>
-                    {/*<Route path="/events/:q" component={ SearchPage }/>*/}
+					{/*<Route path="/events/:q" component={ SearchPage }/>*/}
 				</div>
 			</Router>
 

@@ -11,9 +11,9 @@ export default class Rsvp extends Component {
 		}
 	}
 
-	onSubmit(e){
-	    e.preventDefault
-    }
+    // onSubmit(e){
+	 //    e.preventDefault
+    // }
 
 	render(){
 		return (

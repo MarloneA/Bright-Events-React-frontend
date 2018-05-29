@@ -12,7 +12,7 @@ class FilterLocation extends Component {
 	}
 	onChange (e) {
         let q = e.target.value
-        console.log(q)
+        // console.log(q)
         fetch(`https://andela-brightevents.herokuapp.com/api/v2/events/location/${q}/1/1`).then(
             res => {
                 return res.json()
@@ -29,7 +29,7 @@ class FilterLocation extends Component {
 	}
 
 	render () {
-		console.log(this.state)
+		// console.log(this.state)
 		return (
 			<form className="form-group">
 				<label htmlFor="location" className="style-label-location custom-filter-label-location">Filter by location</label>

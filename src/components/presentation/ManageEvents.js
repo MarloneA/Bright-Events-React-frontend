@@ -1,31 +1,11 @@
 import React, {Component} from "react"
-import {authHeader} from "../helpers/auth_header"
 import { Link } from "react-router-dom"
 
 class ManageMyEvents extends Component {
-	constructor (props) {
-		super(props)
-		this.state = {
-			events: []
-		}
-	}
-	componentWillMount () {
-		fetch("https://andela-brightevents.herokuapp.com/api/v2/events/myevents", {
-			headers: {
-				"token": authHeader()["token"]
-			}
-		}).then(
-			res => {
-				return res.json()
-			}
-		).then(
-			data => {
-				this.setState({events: data.events})
-			}
-		)
-	}
+
 	render () {
-		const content = this.state.events.map(
+		const { events } = this.props
+		const content = events.map(
 			event => (
 				<div className="event" key={event.id}>
 					<Link to={"/edit-events/" + event.id} className="custom-btn edit btn btn-sm" >Edit</Link>

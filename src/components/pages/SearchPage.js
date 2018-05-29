@@ -1,8 +1,8 @@
 import React, {Component} from "react"
-import Head from "../components/Head"
-import Sidebar from "../components/Sidebar"
+import Head from "../presentation/Head"
+import Sidebar from "../presentation/Sidebar"
 import { Link } from "react-router-dom"
-import Rsvp from "../components/Rsvp";
+import Rsvp from "../presentation/Rsvp";
 
 
 class SearchPage extends Component {

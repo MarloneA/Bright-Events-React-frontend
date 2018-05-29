@@ -1,8 +1,8 @@
 import React, {Component} from "react"
 
-import Sidebar from "../components/Sidebar"
-import Head from "../components/Head"
-import CreateEvent from "../components/CreateEvent"
+import Sidebar from "../presentation/Sidebar"
+import Head from "../presentation/Head"
+import CreateEvent from "../presentation/CreateEvent"
 
 export default class NewEvent extends Component {
 	render () {

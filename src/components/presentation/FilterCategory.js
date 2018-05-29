@@ -14,7 +14,7 @@ class FilterCategory extends Component {
 	}
 	onChange (e) {
 		let q = e.target.value
-		console.log(q)
+		// console.log(q)
 		fetch(`https://andela-brightevents.herokuapp.com/api/v2/events/category/${q}/1/1`).then(
 			res => {
 				return res.json()

@@ -1,7 +1,7 @@
 import React, { Component } from "react"
-import { authHeader } from "../helpers/auth_header"
-import { history } from "../helpers"
-import { dispatch } from "redux"
+import { authHeader } from "../../helpers/auth_header"
+import { history } from "../../helpers/index"
+// import { dispatch } from "redux"
 
 export default class EditEvent extends Component {
 	constructor (props) {

@@ -1,7 +1,7 @@
 import React, {Component} from "react"
-import EditEvent from "../components/EditEvent"
-import Head from "../components/Head"
-import Sidebar from "../components/Sidebar"
+import EditEvent from "../presentation/EditEvent"
+import Head from "../presentation/Head"
+import Sidebar from "../presentation/Sidebar"
 
 class Edit extends Component {
 	render () {

@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { dispatch } from "redux"
-import { createEvent } from "../actions"
+// import { createEvent } from "../../actions/index"
 import { connect } from "react-redux"
 
 export class CreateEvent extends Component {
@@ -30,7 +30,7 @@ export class CreateEvent extends Component {
 	onSubmit (e) {
 		e.preventDefault()
 		const { event } = this.state
-		console.log("befor props")
+		// console.log("befor props")
 		if (event.title && event.category && event.location && event.description && event.date) {
 			console.log("submit called", event)
 			this.props.createEvent(event)
@@ -95,4 +95,3 @@ export class CreateEvent extends Component {
 	}
 }
 
-export default connect(null, {createEvent})(CreateEvent)

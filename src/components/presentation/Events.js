@@ -3,26 +3,9 @@ import { Link } from "react-router-dom"
 import Rsvp from "./Rsvp"
 
 export default class Events extends Component {
-	constructor (props) {
-		super(props)
-		this.state = {
-			events: []
-		}
-	}
-	componentWillMount () {
-		fetch("https://andela-brightevents.herokuapp.com/api/v2/events").then(
-			res => {
-				return res.json()
-			}
-		).then(
-			data => {
-				this.setState({events: data.Events})
-			}
-		)
-	}
-
 	render () {
-		const content = this.state.events.map(
+		const {events, loading} = this.props
+		const content = events.map(
 			event => (
 				<div className="event" key={event.id}>
 					<Link to={"/events/" + event.id}>
@@ -42,6 +25,7 @@ export default class Events extends Component {
 		)
 		return (
 			<div id="custom-main-content">
+				{loading}
 				{content}
 				<div className="line"></div>
 			</div>
