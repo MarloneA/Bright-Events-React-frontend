@@ -27,22 +27,23 @@ a:hover{
     max-width: 345px;
     background: #e9ecef;
     color: #0c0800;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
     transition: all 0.3s;
-
-    /*custom*/
     height: 100%;
     width: 160px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-
     overflow-x: hidden;
-    padding-top: 20px;
+    padding-top: 1px;
+    /* background: yellow; */
+    margin-top: 6%;
 }
 
 #sidebar.active {
-    margin-left: -250px;
+    margin-left: -350px;
 }
 
 #sidebar .sidebar-header {
@@ -253,7 +254,6 @@ a:hover{
 
   .pad{
     padding: 10px;
-    margin: 2px;
   }
   .pad:hover {
     background-color: #d88f09!important;
@@ -266,13 +266,16 @@ a:hover{
     color: white!important;
   }
   .my-custom-nav{
-    margin-left: 350px;
+    /*margin-left: 350px;*/
   }
-  .custom-main-content{
+  #custom-main-content{
     background-color: #f4f4f4;
     width: 72%;
     margin-left: 350px;
     margin-top: 75px;
+  }
+  #custom-main-content.active {
+      margin-left: 14%;
   }
   .reset-password-form{
     background: pink;
@@ -518,7 +521,7 @@ select.form-control:not([size]):not([multiple]) {
   margin: auto;
 }
 .cs-logout{
-    margin-left: 55%;
+    margin-left: 68%;
     border: none;
 }
 .cs-dcon{
@@ -557,16 +560,21 @@ select.form-control:not([size]):not([multiple]) {
 /* --------------------------
 Single event styling
 -----------------------------*/
-.cs-main{
+#cs-main{
     padding-top: 50px;
     height: 100%;
-    width: 100%;
+    width: 115%;
+    margin-left: -23%;
 
     /*background: -webkit-gradient(linear, 0deg, color-stop(50%, FFFFFF), color-stop(0, 821F0C));!* Chrome,Safari4+ *!*/
     /*background: -webkit-linear-gradient(0deg, #FFFFFF 50%, #821F0C 0);!* Chrome10+,Safari5.1+ *!*/
 
     /*background: linear-gradient(0deg, #FFFFFF 65%, #821F0C 0);!* W3C *!*/
 }
+/*#cs-main.active{*/
+    /*width: 115%;*/
+    /*margin-left: -23%;*/
+/*}*/
 .cs-evnt-card{
     width: 72.55%;
     margin-right: 1px;
@@ -613,12 +621,21 @@ Single event styling
     CONTENT STYLE
 ----------------------------------------------------- */
 #content {
-    padding: 20px;
-    min-height: 100vh;
-    transition: all 0.3s;
+    /*padding: 20px;*/
+    /*min-height: 100vh;*/
+    /*transition: all 0.3s;*/
 
-    margin-left: 349px;
-    padding-top: 100px;
+    /*margin-left: 349px;*/
+    /*padding-top: 100px;*/
+
+    /*padding: 20px; *!*/
+    /* min-height: 100vh; */
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    /* margin-left: 349px; */
+    /* padding-top: 100px; */
+    width: 0%;
 }
 .search.icon {
     color: black;
@@ -631,7 +648,7 @@ Single event styling
     border-radius: 100%;
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
-    top: 25%;
+    top: 22.5%;
     left: 80%;
 }
 
@@ -644,6 +661,15 @@ Single event styling
     width: 1px;
     background-color: currentColor;
 }
+
+.cs-toggler{
+    width: 50px;
+    height: 50px;
+    background: yellow;
+    position: absolute;
+    left: 85%;
+}
+
 
 
 

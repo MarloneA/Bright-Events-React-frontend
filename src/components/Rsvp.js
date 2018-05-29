@@ -1,12 +1,25 @@
-import React, {Component} from 'react';
+import React, {Component} from "react"
 
 export default class Rsvp extends Component {
 
-  render(){
-    return (
-      <button className="custom-btn btn btn-default btn-lg">
-        RSVP
-      </button>
-    )
-  }
+	constructor(props) {
+		super(props)
+		this.state = {
+			email: "",
+			rsvp : false,
+			event : ""
+		}
+	}
+
+	onSubmit(e){
+	    e.preventDefault
+    }
+
+	render(){
+		return (
+			<button className="custom-btn btn btn-default btn-lg">
+                RSVP
+			</button>
+		)
+	}
 }
