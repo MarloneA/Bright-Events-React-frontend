@@ -1,4 +1,3 @@
-/* eslint-disable no-mixed-spaces-and-tabs */
 import React, {Component} from "react"
 
 class Search extends Component {
@@ -7,7 +6,7 @@ class Search extends Component {
 		this.state = {
 			search: "",
 			data: {
-			    search:[]
+				search:[]
 			}
 		}
 
@@ -31,7 +30,7 @@ class Search extends Component {
 				console.log(data)
 				this.setState({
 					data: {
-					    search: data.search
+						search: data.search
 					}
 				})
 			}

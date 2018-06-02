@@ -1,5 +1,7 @@
 import React, {Component} from "react"
 import { Link } from "react-router-dom"
+import DeleteComponent from "./DeleteEvent"
+import DeletePopup from "./DeletePopup"
 
 class ManageMyEvents extends Component {
 
@@ -8,7 +10,9 @@ class ManageMyEvents extends Component {
 		const content = events.map(
 			event => (
 				<div className="event" key={event.id}>
-					<Link to={"/edit-events/" + event.id} className="custom-btn edit btn btn-sm" >Edit</Link>
+					{/*<DeleteComponent id={event.id}/>*/}
+					<DeletePopup id={event.id}/>
+					<Link to={`/edit-events/${event.id}`} className="custom-btn edit btn btn-sm" >Edit</Link>
 					<div className="event-img">
 						<p>Upload image ...</p>
 					</div>

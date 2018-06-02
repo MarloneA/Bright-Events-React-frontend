@@ -11,21 +11,21 @@ class FilterLocation extends Component {
 		this.onChange = this.onChange.bind(this)
 	}
 	onChange (e) {
-        let q = e.target.value
-        // console.log(q)
-        fetch(`https://andela-brightevents.herokuapp.com/api/v2/events/location/${q}/1/1`).then(
-            res => {
-                return res.json()
-            }
-        ).then(
-            data => {
-                console.log(data)
-                this.setState({
-                    locationFilter: q,
+		let q = e.target.value
+		// console.log(q)
+		fetch(`https://andela-brightevents.herokuapp.com/api/v2/events/location/${q}/1/1`).then(
+			res => {
+				return res.json()
+			}
+		).then(
+			data => {
+				console.log(data)
+				this.setState({
+					locationFilter: q,
                 	data: data
-                })
-            }
-        )
+				})
+			}
+		)
 	}
 
 	render () {
@@ -36,7 +36,7 @@ class FilterLocation extends Component {
 				<select
 					className="form-control location-styling cs-subscrib"
 					id="location"
-                    name="locationFilter"
+					name="locationFilter"
 					onChange={this.onChange}
 				>
 					<option>...</option>

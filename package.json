@@ -32,5 +32,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "redux-devtools-extension": "^2.13.2",
     "redux-logger": "^3.0.6"
-  }
+  },
+  "proxy":"https://andela-brightevents.herokuapp.com/api/v2"
+
 }

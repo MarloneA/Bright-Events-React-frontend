@@ -8,15 +8,14 @@ import { PrivateRoute } from "./components/presentation/PrivateRoute"
 import { Login } from "./components/pages/Login"
 import { Register } from "./components/pages/Register"
 import ResetPassword from "./components/pages/ResetPassword"
-import NewEvent from "./components/pages/NewEvent"
 import Event from "./components/presentation/Event"
 
 import "./assets/css/styles.css"
-// import Manage from "./components/pages/Manage"
-import Edit from "./components/pages/Edit"
-// import SearchPage from "./components/pages/SearchPage"
+
 import HomeContainer from "./components/container/HomeContainer"
-import ManageEventsContainer from "./components/container/ManageEventsContainer";
+import ManageEventsContainer from "./components/container/ManageEventsContainer"
+import NewEventContainer from "./components/container/NewEventContainer"
+import EditEventContainer from "./components/container/EditEventContainer"
 
 class App extends Component {
 	constructor (props) {
@@ -25,6 +24,7 @@ class App extends Component {
 		const { dispatch } = this.props
 		history.listen((location, action) => {
 			// clear alert on location change
+			console.log("This is my location", location, "and this is what I did", action)
 			dispatch(alertActions.clear())
 		})
 	}
@@ -40,12 +40,12 @@ class App extends Component {
 					}
 					<PrivateRoute exact path="/" component={HomeContainer}/>
 					<PrivateRoute path="/manage-events" component={ManageEventsContainer}/>
-					<PrivateRoute path="/create-event" component={NewEvent}/>
+					<PrivateRoute path="/create-event" component={NewEventContainer}/>
+					<PrivateRoute path="/edit-events/:id" component={ EditEventContainer }/>
 					<Route path="/login" component={Login}/>
 					<Route path="/register" component={Register}/>
 					<Route path="/reset-password" component={ResetPassword}/>
 					<Route path="/events/:id" component={Event}/>
-					<Route path="/edit-events/:id" component={ Edit }/>
 					{/*<Route path="/events/:q" component={ SearchPage }/>*/}
 				</div>
 			</Router>

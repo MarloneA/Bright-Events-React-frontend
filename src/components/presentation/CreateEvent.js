@@ -1,9 +1,6 @@
 import React, { Component } from "react"
-import { dispatch } from "redux"
-// import { createEvent } from "../../actions/index"
-import { connect } from "react-redux"
 
-export class CreateEvent extends Component {
+export default class CreateEvent extends Component {
 	constructor (props) {
 		super(props)
 		this.state = {
@@ -12,7 +9,7 @@ export class CreateEvent extends Component {
 				category: "",
 				location: "",
 				description: "",
-				date: ""
+				date_of_event: ""
 			}
 
 		}
@@ -30,12 +27,7 @@ export class CreateEvent extends Component {
 	onSubmit (e) {
 		e.preventDefault()
 		const { event } = this.state
-		// console.log("befor props")
-		if (event.title && event.category && event.location && event.description && event.date) {
-			console.log("submit called", event)
-			this.props.createEvent(event)
-		}
-
+		this.props.onCreate(event)
 	}
 
 	render () {
@@ -51,7 +43,7 @@ export class CreateEvent extends Component {
 				<div className="form-group">
 					<label className="control-label col-sm-2" htmlFor="date">Date:</label>
 					<div className="col-sm-10">
-						<input type="date" name="date" value={event.date} onChange={this.onChange} className="form-control custom-create-event-input" id="date" placeholder="Enter event date"/>
+						<input type="date" name="date_of_event" value={event.date_of_event} onChange={this.onChange} className="form-control custom-create-event-input" id="date" placeholder="Enter event date"/>
 					</div>
 				</div>
 				<div className="form-group">

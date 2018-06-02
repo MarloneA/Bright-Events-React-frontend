@@ -5,12 +5,13 @@ import Sidebar from "../presentation/Sidebar"
 
 class Edit extends Component {
 	render () {
-		const {id} = this.props.match.params
+		// const {id} = this.props.match.params
+		console.log("We are the props", this.props)
 		return (
 			<div className="outline">
 				<Sidebar/>
 				<Head/>
-				<EditEvent id={id}/>
+				<EditEvent id={this.props.match.params.id} onUpdate={(event)=>this.props.editEvent(event)}/>
 			</div>
 		)
 	}
