@@ -20,7 +20,7 @@ class DeleteComponent extends Component {
 	    let id = this.props.id
 		return (
 			<div>
-				<Link onClick={this.onClick} to={`/delete/${id}`} className="custom-btn cs-del-modal edit btn btn-danger btn-sm" >Delete</Link>
+				<button onClick={this.onClick} className="custom-btn cs-del-modal edit btn btn-danger btn-sm" >Delete</button>
 			</div>
 		)
 	}

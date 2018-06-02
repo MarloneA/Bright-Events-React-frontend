@@ -46,6 +46,7 @@ class App extends Component {
 					<Route path="/register" component={Register}/>
 					<Route path="/reset-password" component={ResetPassword}/>
 					<Route path="/events/:id" component={Event}/>
+                    <>
 					{/*<Route path="/events/:q" component={ SearchPage }/>*/}
 				</div>
 			</Router>
