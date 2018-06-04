@@ -7,19 +7,24 @@ import Footer from "../presentation/Footer"
 class Manage extends Component {
 
 	componentDidMount() {
-		this.props.fetchMyEvents()
-	}
+        this.props.fetchMyEvents()
+    }
+
+    onClick = (id) => {
+        this.props.deleteEvent(id)
+    }
+
 	render () {
-		const { events, loading } = this.props
+		const { events, loading } = this.props;
 		if(loading){
-			return <h3>WE are loading .....</h3>
+			return <h3>Loading .....</h3>
 		}
 		return (
 			<div className="outline">
 				<Sidebar/>
 				<Head/>
-				<ManageMyEvents events={events}/>
-				<Footer/>
+				<ManageMyEvents onDelete={this.onClick} events={events}/>
+				{/*<Footer/>*/}
 			</div>
 		)
 	}

@@ -24,7 +24,6 @@ class Event extends Component {
 		const { title, location, category, description, date_of_event, created_by } = this.state.event
 		return (
 			<div>
-				{/*<Sidebar/>*/}
 				<Head/>
 				<main role="main" id="cs-main">
 					<div className="container cs-evnt-card">

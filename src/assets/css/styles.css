@@ -13,6 +13,12 @@ a:hover{
     color: inherit; /* blue colors for links too */
     text-decoration: inherit;
 }
+p{
+    font-size: 12px;
+}
+h3, h4{
+    font-size: 1.25rem;
+}
 
 /* ---------------------------------------------------
     SIDEBAR STYLE
@@ -40,10 +46,11 @@ a:hover{
     padding-top: 1px;
     /* background: yellow; */
     margin-top: 6%;
+    margin-left: -350px;
 }
 
 #sidebar.active {
-    margin-left: -350px;
+    margin-left: 0;
 }
 
 #sidebar .sidebar-header {
@@ -269,13 +276,14 @@ a:hover{
     /*margin-left: 350px;*/
   }
   #custom-main-content{
+      margin-left: 14%;
     background-color: #f4f4f4;
     width: 72%;
-    margin-left: 350px;
+
     margin-top: 75px;
   }
   #custom-main-content.active {
-      margin-left: 14%;
+      margin-left: 350px;
   }
   .reset-password-form{
     background: pink;
@@ -314,7 +322,7 @@ a:hover{
   }
   .custom-create-events{
     width: 71%;
-    margin-left: 350px;
+      margin-left: 260px;
     margin-top: 98px;
     padding: 20px;
   }
@@ -524,7 +532,7 @@ select.form-control:not([size]):not([multiple]) {
   margin: auto;
 }
 .cs-logout{
-    margin-left: 68%;
+    margin-left: 61%;
     border: none;
 }
 .cs-dcon{
@@ -673,7 +681,69 @@ Single event styling
     left: 85%;
 }
 
+.cs-card {
+    /*
+        height: 170px;
+        */
+    /*width: 800px;*/
+    /*background: yellow;*/
+    margin: auto;
+    padding: 35px;
+    /*margin: 10px 0 10px 0;*/
+    border-bottom: 1px dotted;
+}
 
+.cs-cnt-content > h6 {
+    border: 1px solid #2125294f;
+    border-radius: 15px;
+    display: inline-block;
+    float: left;
+    /* background: blue; */
+    padding: 10px 10px 10px 10px;
+    margin-right: 10px;
+    font-size: 13px;
+}
+
+.cs-rsvd{
+    border: 1px solid #2125294f;
+    border-radius: 15px;
+    display: inline-block;
+    float: left;
+    /* background: blue; */
+    padding: 10px 10px 10px 10px;
+    margin-right: 10px;
+    font-size: 13px;
+}
+.cs-rsvd:hover{
+    color: #ffc107;
+    font-weight: 900;
+    background: #602315;
+}
+
+
+.cs-cnt-img {
+    border: 1px solid #2125294f;
+    height: 100%;
+    border-radius: 5%;
+}
+.cs-cnt-img > p {
+    text-align: center;
+    margin-top: 35%;
+    color: #ced4da;
+}
+table{
+    width: 73%;
+    margin-top: 6%;
+    margin-left: 2%;
+}
+tr{
+    border-bottom: 1px solid;
+}
+.btn-info{
+     color: #0c0800;
+    background-color: #f8f9fa;
+     border-color: #f8f9fa;
+}
 
 
 /* ---------------------------------------------------

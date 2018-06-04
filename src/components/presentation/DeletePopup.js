@@ -2,6 +2,9 @@ import React, {Component} from "react"
 import DeleteComponent from "./DeleteEvent"
 
 class DeletePopup extends Component {
+	onDelete = () => {
+		this.props.onDelete(this.props.id)
+	};
 	render() {
 		let id = this.props.id
 		return (
@@ -29,7 +32,7 @@ class DeletePopup extends Component {
 
 
 							<div className="modal-footer">
-								<DeleteComponent id={id}/>
+                                <button onClick={this.onDelete} className="custom-btn cs-del-modal edit btn btn-danger btn-sm" data-dismiss="modal">Delete</button>
 								<button type="button" className="btn btn-sm" data-dismiss="modal">Cancel</button>
 							</div>
 

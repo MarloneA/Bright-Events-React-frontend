@@ -6,6 +6,7 @@ import FilterCategory from "./FilterCategory"
 export default class Sidebar extends Component {
 
 	render () {
+		console.log(this.props)
 		return (
 			<nav id="sidebar" className="nav-sidebar-style custom-nav-bar">
 				{/*<button className="cs-toggler">click me</button>*/}
@@ -13,7 +14,7 @@ export default class Sidebar extends Component {
 					<h3 className="sidebar-header-h3 custom-sidebar-h3">Bright Events</h3>
 				</div>
 				<h3 className="sidebar-header-share custom-sidebar-header-share">Connect Share Inspire</h3>
-				<Search  />
+				<Search onSearch={this.props.onSearch} />
 				<FilterCategory/>
 				<FilterLocation/>
 				<div className="cs-promo">

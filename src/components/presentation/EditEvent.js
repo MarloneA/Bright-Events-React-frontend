@@ -5,7 +5,6 @@ export default class EditEvent extends Component {
 		super(props)
 		this.state = {
 			event: {
-			    id: "",
 				title: "",
 				category: "",
 				location: "",
@@ -43,18 +42,18 @@ export default class EditEvent extends Component {
 				<div className="form-group">
 					<label className="control-label col-sm-2" htmlFor="title">Title:</label>
 					<div className="col-sm-10">
-						<input type="text" name="title" value={event.title} onChange={this.onChange} className="form-control custom-create-event-input" id="title" placeholder="Enter Title"/>
+						<input type="text" name="title" defaultValue={event.title} onChange={this.onChange} className="form-control custom-create-event-input" id="title" placeholder="Enter Title"/>
 					</div>
 				</div>
 				<div className="form-group">
 					<label className="control-label col-sm-2" htmlFor="date">Date:</label>
 					<div className="col-sm-10">
-						<input type="date" name="date" value={event.date_of_event} onChange={this.onChange} className="form-control custom-create-event-input" id="date" placeholder="Enter event date"/>
+						<input type="text" name="date" defaultValue={event.date_of_event} onChange={this.onChange} className="form-control custom-create-event-input" id="date" placeholder="Enter event date"/>
 					</div>
 				</div>
 				<div className="form-group">
 					<label htmlFor="category" className="control-label custom-ce-label">Category:</label>
-					<select name="category" value={event.category} onChange={this.onChange} className="form-control category-styling custom-ce-label">
+					<select name="category" defaultValue={event.category} onChange={this.onChange} className="form-control category-styling custom-ce-label">
 						<option>...</option>
 						<option>Workshops</option>
 						<option>Science & Tech</option>
@@ -64,7 +63,7 @@ export default class EditEvent extends Component {
 				</div>
 				<div className="form-group">
 					<label htmlFor="location" className="control-label custom-ce-label">Location:</label>
-					<select name="location" value={event.location} onChange={this.onChange} className="form-control location-styling custom-ce-label">
+					<select name="location" defaultValue={event.location} onChange={this.onChange} className="form-control location-styling custom-ce-label">
 						<option>...</option>
 						<option>Nairobi</option>
 						<option>Mombasa</option>
@@ -75,7 +74,7 @@ export default class EditEvent extends Component {
 
 				<div className="form-group">
 					<label className="control-label col-sm-2" htmlFor="email">Description:</label>
-					<textarea name="description" value={event.description} onChange={this.onChange} className="col-sm-10 custom-create-event-textarea" rows="10"/>
+					<textarea name="description" defaultValue={event.description} onChange={this.onChange} className="col-sm-10 custom-create-event-textarea" rows="10"/>
 				</div>
 
 				<div className="form-group">

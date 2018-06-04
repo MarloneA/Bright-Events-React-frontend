@@ -2,7 +2,7 @@ import {eventActionTypes} from "../actionTypes"
 import {authHeader} from "../helpers/auth_header"
 import {history} from "../helpers"
 
-const {NETWORK_REQUEST, EVENTS_FETCHED, FETCH_MY_EVENTS, CREATE_EVENT, EDIT_EVENT, DELETE_EVENT} = eventActionTypes
+const {NETWORK_REQUEST, EVENTS_FETCHED, FETCH_MY_EVENTS, CREATE_EVENT, EDIT_EVENT, DELETE_EVENT, SEARCH_EVENT} = eventActionTypes
 
 export const loading = ()=>({type:NETWORK_REQUEST})
 
@@ -22,10 +22,15 @@ const editingEvent = editedEvent => ({
 	type: EDIT_EVENT,
 	editedEvent
 })
-const deletingEvent = deletedEvent =>({
+const deletingEvent = id =>({
 	type: DELETE_EVENT,
-	deletedEvent
+	id
 })
+const searchingEvent = searchedEvent =>({
+	type: SEARCH_EVENT,
+	searchedEvent
+})
+
 
 
 export const createEvent = eventData =>dispatch=>{
@@ -103,9 +108,24 @@ export const deleteEvent = deleteid => dispatch =>{
 		res=>{ return res.json()}
 	).then(data=>{
 		console.log(data)
-		dispatch(deletingEvent(data))
+		dispatch(deletingEvent(deleteid))
 		history.push("/manage-events")
 	}).catch(error=>console.log("the error received is ", error))
+}
+
+export const searchEvent = query => dispatch =>{
+	dispatch(loading())
+	return fetch(`https://andela-brightevents.herokuapp.com/api/v2/events/${query}/100/1`).then(
+		res => {
+			return res.json()
+		}
+	).then(
+		data => {
+			console.log(data)
+			dispatch(searchingEvent(data.search))
+			history.push(`/events/${query}`)
+		}
+	).catch(error=>console.log("the error received is ", error))
 }
 
 

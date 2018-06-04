@@ -3,7 +3,9 @@ import Edit from "../pages/Edit"
 import {editEvent} from "../../actions";
 
 const mapStateToProps = state=>{
+
 	return {
+		events: state.myEvents,
 		editEvent:state.editEvent,
 		loading:state.loading
 	}

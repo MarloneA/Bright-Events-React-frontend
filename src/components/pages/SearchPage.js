@@ -2,18 +2,26 @@ import React, {Component} from "react"
 import Head from "../presentation/Head"
 import Sidebar from "../presentation/Sidebar"
 import { Link } from "react-router-dom"
-import Rsvp from "../presentation/Rsvp";
+import Rsvp from "../presentation/Rsvp"
 
 
 class SearchPage extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			data: []
+		    dataFromChild: []
 		}
-		// this.populateData = this.populateData.bind(this)
+
+		this.handleDataFromChild = this.handleDataFromChild.bind(this)
 	}
+	handleDataFromChild(){
+		this.setState({
+			dataFromChild: this.props.sData
+		})
+	}
+
 	render() {
+		console.log(this.props)
 		const content = this.state.data.map(
 			event => (
 				<div className="event" key={event.id}>
@@ -35,7 +43,7 @@ class SearchPage extends Component {
 		return (
 			<div>
 				<Head/>
-				<Sidebar/>
+				<Sidebar onSearch={(query)=>this.props.searchEvent(query)} content/>
 				<div id="custom-main-content">
 					{content}
 					<div className="line"></div>

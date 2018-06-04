@@ -16,6 +16,7 @@ import HomeContainer from "./components/container/HomeContainer"
 import ManageEventsContainer from "./components/container/ManageEventsContainer"
 import NewEventContainer from "./components/container/NewEventContainer"
 import EditEventContainer from "./components/container/EditEventContainer"
+import GuestList from "./components/presentation/GuestList"
 
 class App extends Component {
 	constructor (props) {
@@ -36,7 +37,7 @@ class App extends Component {
 			<Router history={history}>
 				<div className="custom-pg-background">
 					{alert.message &&
-                  <div id="cs-alert" className={`alert ${alert.type}`}>{alert.message}</div>
+                        <div id="cs-alert" className={`alert ${alert.type}`}>{alert.message}</div>
 					}
 					<PrivateRoute exact path="/" component={HomeContainer}/>
 					<PrivateRoute path="/manage-events" component={ManageEventsContainer}/>
@@ -46,8 +47,7 @@ class App extends Component {
 					<Route path="/register" component={Register}/>
 					<Route path="/reset-password" component={ResetPassword}/>
 					<Route path="/events/:id" component={Event}/>
-                    <>
-					{/*<Route path="/events/:q" component={ SearchPage }/>*/}
+					<Route path="/api/v2/event/:id/rsvp" component={GuestList}/>
 				</div>
 			</Router>
 

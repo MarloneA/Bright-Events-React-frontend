@@ -1,5 +1,3 @@
-
-
 import React, {Component} from "react"
 
 class FilterCategory extends Component {
@@ -31,6 +29,7 @@ class FilterCategory extends Component {
 	}
 
 	render () {
+		// console.log("I am the data from the state",this.state.data)
 		return (
 			<form className="form-group custom-form-group">
 				<label htmlFor="category" className="style-label-category custom-filter-label-category">Filter by Category</label>

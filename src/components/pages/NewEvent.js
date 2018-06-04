@@ -10,7 +10,6 @@ export default class NewEvent extends Component {
 		return (
 			<div className="outline">
 				<Head/>
-				<Sidebar/>
 				<CreateEvent onCreate={(event)=>this.props.createEvent(event)}/>
 			</div>
 		)

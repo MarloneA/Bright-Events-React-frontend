@@ -12,12 +12,12 @@ class DeleteComponent extends Component {
 		this.onClick = this.onClick.bind(this)
 	}
 	onClick(e){
+	    e.preventDefault()
 	    let id = this.props.id
 		this.props.deleteEvent(id)
 	}
 
 	render() {
-	    let id = this.props.id
 		return (
 			<div>
 				<button onClick={this.onClick} className="custom-btn cs-del-modal edit btn btn-danger btn-sm" >Delete</button>

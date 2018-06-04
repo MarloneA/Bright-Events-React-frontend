@@ -8,6 +8,7 @@ import myEvents from "../reducers/myEvents.reducer"
 import newEvent from "../reducers/newEvent.reducer"
 import editEvent from "../reducers/editEvent.reducer"
 import deletedEvent from "../reducers/deleteEvent.reducer"
+import searchEvent from "../reducers/searchEvent.reducer"
 
 const rootReducer = combineReducers({
 	registration,
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
 	myEvents,
 	newEvent,
 	editEvent,
-	deletedEvent
+	deletedEvent,
+	searchEvent
 })
 export default rootReducer

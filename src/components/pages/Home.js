@@ -18,7 +18,7 @@ export default class Home extends Component {
 				<Sidebar/>
 				<Head/>
 				<Events events={events} loading={loading}/>
-				<Footer/>
+				{/*<Footer/>*/}
 			</div>
 		)
 	}
