@@ -1,6 +1,5 @@
 import React, {Component} from "react"
 import { Link } from "react-router-dom"
-import DeleteComponent from "./DeleteEvent"
 import DeletePopup from "./DeletePopup"
 
 class ManageMyEvents extends Component {
@@ -11,6 +10,8 @@ class ManageMyEvents extends Component {
 
 	render () {
 		const { events } = this.props
+
+        console.log(events)
 		const content = events.map(
 			event => (
 				<div className="cs-card" key={event.id}>
@@ -46,18 +47,3 @@ class ManageMyEvents extends Component {
 }
 
 export default ManageMyEvents
-
-{/*<div className="event" key={event.id}>*/}
-{/*/!*<DeleteComponent id={event.id}/>*!/*/}
-{/*<DeletePopup id={event.id}/>*/}
-{/*<Link to={`/edit-events/${event.id}`} className="custom-btn edit btn btn-sm" >Edit</Link>*/}
-{/*<div className="event-img">*/}
-{/*<p>Upload image ...</p>*/}
-{/*</div>*/}
-{/*<div className="event-content">*/}
-{/*<h4 className="custom-event-styling">{event.title}</h4>*/}
-{/*<h6 className="custom-event-styling">{"Date of Event: " + event.date_of_event}</h6>*/}
-{/*<p className="custom-event-styling-par">{event.description.slice(0,200)+" ..."}</p>*/}
-{/*<h6 className="custom-event-styling cs-dcon">{"Created on: " + event.created_on}</h6>*/}
-{/*</div>*/}
-{/*</div>*/}

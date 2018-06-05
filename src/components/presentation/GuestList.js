@@ -6,7 +6,13 @@ class GuestList extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			guests:[]
+			guests:[
+				{
+					event:"N/A",
+					name: "N/A",
+					email: "N/A"
+				}
+			]
 		}
 	}
 
@@ -24,28 +30,32 @@ class GuestList extends Component {
 			this.setState({
 				guests:data.guests
 			})
-		})
+		}).catch(error=>console.log(error))
 	}
 
 	render() {
 
 		const { guests } = this.state
-		const rows = guests.map(
+
+		const row = guests.map(
 			(guest, index)=>(
 				<tr key={index}>
-					<th scope="row">1</th>
+					<th scope="row">{index+1}</th>
 					<td>{guest.event}</td>
 					<td>{guest.name}</td>
 					<td>{guest.email}</td>
 				</tr>
 			)
 		)
+
+
+
 		return (
 			<div>
 				<Head/>
 				<table className="table">
 					<thead>
-                        <h4>Guest List</h4>
+						<h4>Guest List</h4>
 						<tr>
 							<th scope="col">#</th>
 							<th scope="col">Event</th>
@@ -54,7 +64,7 @@ class GuestList extends Component {
 						</tr>
 					</thead>
 					<tbody>
-						{rows}
+						{row}
 					</tbody>
 				</table>
 			</div>
@@ -64,3 +74,14 @@ class GuestList extends Component {
 
 
 export default GuestList
+
+
+// console.log(guests)
+//
+// const row = function(param){
+//     if(param === []){
+//         return param.push({"event":"N/A", "name":"N/A", "email":"N/A"})
+//     }else{
+//         return param
+//     }
+// }

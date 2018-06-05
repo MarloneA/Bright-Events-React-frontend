@@ -14,7 +14,7 @@ export default class Rsvp extends Component {
 	onClick(){
 		let id = this.props.id
 		let reqbody = {
-			"email":"marlone911@gmail.com"
+			"email":"elton@gmail.com"
 		}
 		fetch(`https://andela-brightevents.herokuapp.com/api/v2/event/${id}/rsvp`,{
 			method: "POST",
@@ -49,7 +49,7 @@ export default class Rsvp extends Component {
 								</button>
 							</div>
 							<div className="modal-body">
-                                {this.state.message}
+								{this.state.message}
 							</div>
 						</div>
 					</div>
@@ -59,15 +59,3 @@ export default class Rsvp extends Component {
 		)
 	}
 }
-
-// let id = this.props.match.params.id
-// fetch(`https://andela-brightevents.herokuapp.com/api/v2/event/${id}/rsvp`,{
-// 	method: "POST",
-// 	headers:{
-// 		"token": authHeader()["token"]
-// 	}
-// }).then(
-// 	res =>res.json()
-// ).then(data=>{
-// 	console.log(data)
-// })

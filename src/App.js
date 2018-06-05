@@ -25,7 +25,6 @@ class App extends Component {
 		const { dispatch } = this.props
 		history.listen((location, action) => {
 			// clear alert on location change
-			console.log("This is my location", location, "and this is what I did", action)
 			dispatch(alertActions.clear())
 		})
 	}

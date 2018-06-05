@@ -1,4 +1,5 @@
 import React, {Component} from "react"
+import Events from "./Events"
 
 class Search extends Component {
 	constructor (props) {
@@ -14,6 +15,7 @@ class Search extends Component {
 		this.onSubmit = this.onSubmit.bind(this)
 	}
 	onChange (e) {
+		console.log(e.target.value)
 		this.setState({
 			search: e.target.value
 		})
@@ -36,7 +38,6 @@ class Search extends Component {
 			}
 		)
 	}
-
 
 	render () {
 		return (

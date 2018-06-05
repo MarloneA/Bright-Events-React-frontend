@@ -15,12 +15,10 @@ export default class Head extends Component {
 						<a className="nav-item nav-link active pad" href="/">Home <span className="sr-only">(current)</span></a>
 						<a className="nav-item nav-link pad" href="/">Browse Events</a>
 						<a className="nav-item nav-link pad" href="/manage-events">Manage Events</a>
-						{/*<a className="nav-item nav-link pad" href="/">Guest LIst</a>*/}
 					</div>
 					<div id="content">
-						<button type="button" id="sidebarCollapse" className="btn btn-info navbar-btn">
-							<i className="glyphicon glyphicon-align-left"></i>
-                             Sidebar
+						<button type="button" id="sidebarCollapse" className=" cs-util ">
+							<span className="glyphicon glyphicon-tasks menu icon"></span>
 						</button>
 					</div>
 					<Logout/>

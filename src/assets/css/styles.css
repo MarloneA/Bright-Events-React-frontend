@@ -659,7 +659,7 @@ Single event styling
     border-radius: 100%;
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
-    top: 22.5%;
+    top: 19.5%;
     left: 80%;
 }
 
@@ -744,6 +744,54 @@ tr{
     background-color: #f8f9fa;
      border-color: #f8f9fa;
 }
+.cs-util{
+    position: absolute;
+    top: 121%;
+    left: 0%;
+
+    height: 45px;
+    width: 45px;
+    color: black;
+    border-radius:100% ;
+    -webkit-appearance: caret!important;
+}
+.cs-util.active{
+    left: 27.25%;
+    background: #f4f4f4;
+}
+.cs-util:hover{
+    cursor: pointer;
+}
+.menu.icon {
+    color: #000;
+    position: absolute;
+    margin-left: -11px;
+    margin-top: 0px;
+    width: 23px;
+    height: 2px;
+    background-color: currentColor;
+}
+.menu.icon:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 17px;
+    height: 2px;
+    background-color: currentColor;
+}
+
+.menu.icon:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 17px;
+    height: 2px;
+    background-color: currentColor;
+}
+
+
 
 
 /* ---------------------------------------------------

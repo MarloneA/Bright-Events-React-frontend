@@ -1,6 +1,4 @@
 import React, {Component} from "react"
-
-import Sidebar from "../presentation/Sidebar"
 import Head from "../presentation/Head"
 import CreateEvent from "../presentation/CreateEvent"
 

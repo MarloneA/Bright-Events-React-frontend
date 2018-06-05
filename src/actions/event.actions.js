@@ -108,68 +108,7 @@ export const deleteEvent = deleteid => dispatch =>{
 		res=>{ return res.json()}
 	).then(data=>{
 		console.log(data)
-		dispatch(deletingEvent(deleteid))
+		dispatch(deletingEvent(id))
 		history.push("/manage-events")
 	}).catch(error=>console.log("the error received is ", error))
 }
-
-export const searchEvent = query => dispatch =>{
-	dispatch(loading())
-	return fetch(`https://andela-brightevents.herokuapp.com/api/v2/events/${query}/100/1`).then(
-		res => {
-			return res.json()
-		}
-	).then(
-		data => {
-			console.log(data)
-			dispatch(searchingEvent(data.search))
-			history.push(`/events/${query}`)
-		}
-	).catch(error=>console.log("the error received is ", error))
-}
-
-
-// {
-//     body: JSON.stringify(eventData),
-//         method: "POST",
-//     headers: {
-//     "Content-Type": "application/json",
-//         "token": authHeader()["token"],
-//         accept: "application/json"
-// }
-
-// return fetch("https://andela-brightevents.herokuapp.com/api/v2/events",{
-// 	method: "POST",
-// 	headers:{
-// 		"token": authHeader()["token"],
-// 		"Content-Type": "application/json"
-// 	},
-// 	body:eventData
-// }).then(
-// 	res =>res.json()
-// ).then(data=>{
-// 	console.log(data)
-// })
-//
-//
-// var instance = axios.create({
-// 	// 	baseURL: "https://andela-brightevents.herokuapp.com/api/v2",
-// 	// 	headers: {
-// 	// 		Accept : "application/json",
-// 	// 		ContentType : "application/json"
-// 	// 	}
-// 	// })
-//     //
-// 	// instance.interceptors.request.use((config)=>{
-// 	// 	const accessToken = authHeader()["token"]
-// 	// 	config.headers.token = `${accessToken}`
-// 	// 	return config
-// 	// })
-//     //
-// 	// return instance.post("/events", eventData)
-// 	// 	.then(function (response) {
-// 	// 		console.log(response)
-// 	// 	})
-// 	// 	.catch(function (error) {
-// 	// 		console.log(error)
-// 	// 	})

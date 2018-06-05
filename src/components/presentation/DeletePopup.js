@@ -1,12 +1,10 @@
 import React, {Component} from "react"
-import DeleteComponent from "./DeleteEvent"
 
 class DeletePopup extends Component {
 	onDelete = () => {
 		this.props.onDelete(this.props.id)
 	};
 	render() {
-		let id = this.props.id
 		return (
 			<div className="container">
 				<button type="button" className="custom-btn edit btn btn-danger btn-sm" data-toggle="modal" data-target="#myModal">
