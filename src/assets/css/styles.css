@@ -212,7 +212,8 @@ h3, h4{
   .style-label-category{
     margin-left: 10%;
     margin-top: 10%;
-    margin-bottom: 6%;
+      margin-bottom: 3%;
+      font-size: 0.87rem;
   }
   .category-styling{
     width: 80%;
@@ -224,7 +225,8 @@ h3, h4{
   .style-label-location{
     margin-left: 10%;
     margin-top: 4%;
-    margin-bottom: 6%;
+      margin-bottom: 3%;
+      font-size: 0.87rem;
   }
   .location-styling{
     margin: auto;

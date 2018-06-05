@@ -5,7 +5,8 @@ import {fetchEvents} from "../../actions/index"
 const mapStateToProps = (state)=>{
 	return {
 		events : state.events,
-		loading: state.loading
+		loading: state.loading,
+		searchEvent: state.searchEvent
 	}
 
 }

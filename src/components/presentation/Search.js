@@ -1,7 +1,8 @@
 import React, {Component} from "react"
-import Events from "./Events"
+import { searchEventt } from "../../actions"
+import {connect} from "react-redux"
 
-class Search extends Component {
+class   Search extends Component {
 	constructor (props) {
 		super(props)
 		this.state = {
@@ -15,7 +16,6 @@ class Search extends Component {
 		this.onSubmit = this.onSubmit.bind(this)
 	}
 	onChange (e) {
-		console.log(e.target.value)
 		this.setState({
 			search: e.target.value
 		})
@@ -23,20 +23,7 @@ class Search extends Component {
 	onSubmit (e) {
 		e.preventDefault()
 		let q = this.state.search
-		fetch(`https://andela-brightevents.herokuapp.com/api/v2/events/${q}/100/1`).then(
-			res => {
-				return res.json()
-			}
-		).then(
-			data => {
-				console.log(data)
-				this.setState({
-					data: {
-						search: data.search
-					}
-				})
-			}
-		)
+		this.props.searchEvent(q)
 	}
 
 	render () {
@@ -50,11 +37,20 @@ class Search extends Component {
 						type="text"
 						onChange={this.onChange}
 					/>
-					<span className="search icon"></span>
+					<span className="search icon">
+
+					</span>
 				</form>
 			</div>
 		)
 	}
 }
 
-export default Search
+const mapDispatchToProps = dispatch =>{
+	return {
+		searchEvent: (query)=>dispatch(searchEventt(query))
+	}
+}
+
+export default connect(null, mapDispatchToProps)(Search)
+

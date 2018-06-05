@@ -11,12 +11,13 @@ export default class Home extends Component {
 	}
 
 	render () {
-		const {events, loading} = this.props
+
+		const {events, loading, searchEvent} = this.props
 		return (
 			<div className="outline">
 				<Sidebar/>
 				<Head/>
-				<Events events={events} loading={loading}/>
+				<Events events={events} loading={loading} searchlist={searchEvent}/>
 			</div>
 		)
 	}

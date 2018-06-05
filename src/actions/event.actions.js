@@ -112,3 +112,17 @@ export const deleteEvent = deleteid => dispatch =>{
 		history.push("/manage-events")
 	}).catch(error=>console.log("the error received is ", error))
 }
+
+export const searchEventt = query => dispatch =>{
+	dispatch(loading())
+	return fetch(`https://andela-brightevents.herokuapp.com/api/v2/events/${query}/100/1`).then(
+		res => {
+			return res.json()
+		}
+	).then(
+		data => {
+			console.log(data)
+			dispatch(searchingEvent(data.search))
+		}
+	)
+}

@@ -10,8 +10,6 @@ class ManageMyEvents extends Component {
 
 	render () {
 		const { events } = this.props
-
-        console.log(events)
 		const content = events.map(
 			event => (
 				<div className="cs-card" key={event.id}>

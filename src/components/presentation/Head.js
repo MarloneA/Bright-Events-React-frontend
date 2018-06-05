@@ -17,7 +17,7 @@ export default class Head extends Component {
 						<a className="nav-item nav-link pad" href="/manage-events">Manage Events</a>
 					</div>
 					<div id="content">
-						<button type="button" id="sidebarCollapse" className=" cs-util ">
+						<button type="button" id="sidebarCollapse" className=" cs-util">
 							<span className="glyphicon glyphicon-tasks menu icon"></span>
 						</button>
 					</div>
