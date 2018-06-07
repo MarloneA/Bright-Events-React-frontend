@@ -6,27 +6,27 @@ const {NETWORK_REQUEST, EVENTS_FETCHED, FETCH_MY_EVENTS, CREATE_EVENT, EDIT_EVEN
 
 export const loading = ()=>({type:NETWORK_REQUEST})
 
-const eventsReceived = events => ({
+export const eventsReceived = events => ({
 	type:EVENTS_FETCHED,
 	events
 })
-const myEventsReceived = myEvents => ({
+export const myEventsReceived = myEvents => ({
 	type: FETCH_MY_EVENTS,
 	myEvents
 })
-const eventCreated = newEvent => ({
+export const eventCreated = newEvent => ({
 	type: CREATE_EVENT,
 	newEvent
 })
-const editingEvent = editedEvent => ({
+export const editingEvent = editedEvent => ({
 	type: EDIT_EVENT,
 	editedEvent
 })
-const deletingEvent = id =>({
+export const deletingEvent = id =>({
 	type: DELETE_EVENT,
 	id
 })
-const searchingEvent = searchedEvent =>({
+export const searchingEvent = searchedEvent =>({
 	type: SEARCH_EVENT,
 	searchedEvent
 })

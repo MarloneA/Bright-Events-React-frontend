@@ -6,13 +6,7 @@ class GuestList extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			guests:[
-				{
-					event:"N/A",
-					name: "N/A",
-					email: "N/A"
-				}
-			]
+		    attendees:[ ]
 		}
 	}
 
@@ -26,29 +20,35 @@ class GuestList extends Component {
 		}).then(
 			res =>res.json()
 		).then(data=>{
-			console.log("I have mounted, here is your data", data)
+			console.log("I have mounted, here is your data", data["guests"])
 			this.setState({
-				guests:data.guests
+				attendees:data.guests
 			})
 		}).catch(error=>console.log(error))
 	}
 
 	render() {
 
-		const { guests } = this.state
+		const { attendees }  = this.state
 
-		const row = guests.map(
-			(guest, index)=>(
-				<tr key={index}>
-					<th scope="row">{index+1}</th>
-					<td>{guest.event}</td>
-					<td>{guest.name}</td>
-					<td>{guest.email}</td>
-				</tr>
+		const rows = function(items){
+			return items.map(
+				(item, index)=>(
+					<tr key={index}>
+						<th scope="row">{index+1}</th>
+						<td>{item.event}</td>
+						<td>{item.name}</td>
+						<td>{item.email}</td>
+					</tr>
+				)
 			)
-		)
-
-
+		}
+		const display = function(){
+			if (attendees !== []){
+				return rows(attendees)
+			}
+			return <p>Looks lonely in here</p>
+		}
 
 		return (
 			<div>
@@ -64,7 +64,7 @@ class GuestList extends Component {
 						</tr>
 					</thead>
 					<tbody>
-						{row}
+						{display()}
 					</tbody>
 				</table>
 			</div>

@@ -1,5 +1,6 @@
 import React, {Component} from "react"
 import Logout from "./Logout"
+import {Link} from "react-router-dom"
 
 export default class Head extends Component {
 	render () {
@@ -12,9 +13,9 @@ export default class Head extends Component {
 
 				<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div className="navbar-nav">
-						<a className="nav-item nav-link active pad" href="/">Home <span className="sr-only">(current)</span></a>
-						<a className="nav-item nav-link pad" href="/">Browse Events</a>
-						<a className="nav-item nav-link pad" href="/manage-events">Manage Events</a>
+						<Link className="nav-item nav-link active pad" to="/">Home <span className="sr-only">(current)</span></Link>
+						<Link className="nav-item nav-link pad" to="/">Browse Events</Link>
+						<Link className="nav-item nav-link pad" to="/manage-events">Manage Events</Link>
 					</div>
 					<div id="content">
 						<button type="button" id="sidebarCollapse" className=" cs-util">

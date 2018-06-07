@@ -4,65 +4,71 @@ import { alertActions } from "./"
 
 import { history } from "../helpers"
 
-export const userActions = {
-	login,
-	logout,
-	register
+export const request = user =>({
+	type: userConstants.LOGIN_REQUEST,
+	user
+})
+
+export const success = user =>({
+	type: userConstants.LOGIN_SUCCESS,
+	user
+})
+
+export const failure = error =>({
+	type: userConstants.LOGIN_FAILURE,
+	error
+})
+
+export const registerRequest = user =>({
+	type: userConstants.REGISTER_REQUEST,
+	user
+})
+export const registerSuccess = user =>({
+	type: userConstants.REGISTER_SUCCESS,
+	user
+})
+export const registerFailure = error =>({
+	type: userConstants.REGISTER_FAILURE,
+	error
+})
+
+export const loggedOut = ()=>({type: userConstants.LOGOUT})
+
+export const login = user => dispatch => {
+
+	dispatch(request(user))
+	userService.login(user)
+		.then(
+			user => {
+				dispatch(success(user))
+				history.push("/")
+			},
+			error => {
+				dispatch(failure(error))
+				dispatch(alertActions.error(error))
+			}
+		)
 }
 
-function login (user) {
-	return dispatch => {
-		dispatch(request(user))
-
-		userService.login(user)
-			.then(
-				user => {
-					dispatch(success(user))
-					history.push("/")
-				},
-				error => {
-					dispatch(failure(error))
-					dispatch(alertActions.error(error))
-				}
-			)
-	}
-
-	function request (user) {
-		return { type: userConstants.LOGIN_REQUEST, user }
-	}
-	function success (user) {
-		return { type: userConstants.LOGIN_SUCCESS, user }
-	}
-	function failure (error) {
-		return { type: userConstants.LOGIN_FAILURE, error }
-	}
-}
-
-function logout () {
+export const logout = () => dispatch=>{
 	userService.logout()
-	return { type: userConstants.LOGOUT }
+	dispatch(loggedOut())
 }
 
-function register (user) {
-	return dispatch => {
-		dispatch(request(user))
+export const register = user => dispatch => {
+	dispatch(registerRequest(user))
 
-		userService.register(user)
-			.then(
-				response => {
-					dispatch(success())
-					history.push("/login")
-					dispatch(alertActions.success(response.message))
-				}
-			).catch(
-				err => {
-					dispatch(failure(err))
-					dispatch(alertActions.error(err))
-				}
-			)
-	}
-
-	function request (user) { return { type: userConstants.REGISTER_REQUEST, user } }
-	function success (user) { return { type: userConstants.REGISTER_SUCCESS, user } }
-	function failure (error) { return { type: userConstants.REGISTER_FAILURE, error } }
+	userService.register(user)
+		.then(
+			response => {
+				dispatch(registerSuccess())
+				history.push("/login")
+				dispatch(alertActions.success(response.message))
+			}
+		).catch(
+			err => {
+				dispatch(registerFailure(err))
+				dispatch(alertActions.error(err))
+			}
+		)
 }

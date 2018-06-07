@@ -7,11 +7,19 @@ export default class Rsvp extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			message:""
+			message:"",
+			mail:""
 		}
-		this.onClick = this.onClick.bind(this)
+		this.handleClick = this.handleClick.bind(this)
+		this.handleChange = this.handleChange.bind(this)
 	}
-	onClick(){
+	handleChange(e){
+	    this.setState({
+			mail:e.target.value
+		})
+	}
+
+	handleClick(){
 		let id = this.props.id
 		let reqbody = {
 			"email":"elton@gmail.com"
@@ -36,7 +44,7 @@ export default class Rsvp extends Component {
 	render(){
 		return (
 			<div>
-				<Link onClick={this.onClick} className="cs-rsvd" to={"#"} data-toggle="modal" data-target=".rsvp" >
+				<Link onClick={this.handleClick} className="cs-rsvd" to={"#"} data-toggle="modal" data-target=".rsvp" >
                     Book reservation
 				</Link>
 				<div className="modal fade rsvp" id="exampleModal" tabIndex="-1" role="dialog"
@@ -48,6 +56,8 @@ export default class Rsvp extends Component {
 									<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
+							{/*<input name='email' value={this.state.email} type="email" className="form-control" placeholder="Email address" onChange={this.handleChange} required />*/}
+
 							<div className="modal-body">
 								{this.state.message}
 							</div>

@@ -1,7 +1,8 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
 import logo from "../../assets/images/bevlogo.png"
-import { userActions } from "../../actions/index"
+import { register } from "../../actions"
+
 
 class Register extends Component {
 	constructor (props) {
@@ -39,7 +40,7 @@ class Register extends Component {
 		const { dispatch } = this.props
 
 		if (user.firstName && user.lastName && user.email && user.password) {
-			dispatch(userActions.register(user))
+			dispatch(register(user))
 		}
 	}
 
