@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import Logout from "./Logout"
 import {Link} from "react-router-dom"
+import Search from "./Search"
 
 export default class Head extends Component {
 	render () {
@@ -17,6 +18,7 @@ export default class Head extends Component {
 						<Link className="nav-item nav-link pad" to="/">Browse Events</Link>
 						<Link className="nav-item nav-link pad" to="/manage-events">Manage Events</Link>
 					</div>
+					<Search/>
 					<div id="content">
 						<button type="button" id="sidebarCollapse" className=" cs-util">
 							<span className="glyphicon glyphicon-tasks menu icon"></span>

@@ -61,14 +61,22 @@ export const register = user => dispatch => {
 	userService.register(user)
 		.then(
 			response => {
-				dispatch(registerSuccess())
-				history.push("/login")
-				dispatch(alertActions.success(response.message))
-			}
-		).catch(
-			err => {
-				dispatch(registerFailure(err))
-				dispatch(alertActions.error(err))
+			    if(response.message === "registration succesfull"){
+					dispatch(registerSuccess())
+					history.push("/login")
+					dispatch(alertActions.success(response.message))
+				}else{
+					dispatch(registerFailure(response.message))
+					dispatch(alertActions.error(response.message))
+				}
+
+
 			}
 		)
+        // .catch(
+		// 	err => {
+		// 		dispatch(registerFailure(err))
+		// 		dispatch(alertActions.error(err))
+		// 	}
+		// )
 }

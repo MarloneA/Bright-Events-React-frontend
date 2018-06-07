@@ -54,9 +54,9 @@ function register (user) {
 }
 
 function handleResponse (response) {
-	if (!response.ok) {
-		return Promise.reject(response.statusText)
-	}
+	// if (!response.ok) {
+	// 	return Promise.reject(response.statusText)
+	// }
 
 	return response.json()
 }

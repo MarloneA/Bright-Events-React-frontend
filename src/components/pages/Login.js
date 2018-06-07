@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import { connect } from "react-redux"
 import logo from "../../assets/images/bevlogo.png"
-import { userActions } from "../../actions/index"
+import { login } from "../../actions/index"
 
 class Login extends Component {
 	constructor (props) {
@@ -36,7 +36,7 @@ class Login extends Component {
 		const { dispatch } = this.props
 
 		if (user.email && user.password) {
-			dispatch(userActions.login(user))
+			dispatch(login(user))
 		}
 	}
 

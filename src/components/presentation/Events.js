@@ -9,6 +9,9 @@ export default class Events extends Component {
 			if(searchlist.length !== 0){
 				return content(searchlist)
 			}
+			if(searchlist === null){
+			    return content(events)
+			}
 			return content(events)
 		}
 

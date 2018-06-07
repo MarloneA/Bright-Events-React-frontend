@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import { searchEventt } from "../../actions"
 import {connect} from "react-redux"
 
-class   Search extends Component {
+class Search extends Component {
 	constructor (props) {
 		super(props)
 		this.state = {
