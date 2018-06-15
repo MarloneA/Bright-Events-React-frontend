@@ -2,17 +2,11 @@ import React, {Component} from "react"
 
 class DeletePopup extends Component {
 	onDelete = () => {
-	    console.log("I have been triggered")
 		this.props.onDelete(this.props.id)
 	};
 	render() {
 		return (
 			<div className="container">
-				<button type="button" className="custom-btn edit btn btn-danger btn-sm" data-toggle="modal" data-target="#delmodal">
-                    Delete
-				</button>
-
-
 				<div className="modal fade" id="delmodal">
 					<div className="modal-dialog">
 						<div className="modal-content">

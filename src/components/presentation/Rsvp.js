@@ -1,28 +1,27 @@
 import React, {Component} from "react"
 import { Link } from "react-router-dom"
 import {authHeader} from "../../helpers/auth_header"
+import { alertActions } from "../../actions";
 
 export default class Rsvp extends Component {
 
 	constructor(props) {
 		super(props)
 		this.state = {
-			message:"",
-			mail:""
+			message:""
 		}
 		this.handleClick = this.handleClick.bind(this)
-		this.handleChange = this.handleChange.bind(this)
 	}
-	handleChange(e){
-	    this.setState({
-			mail:e.target.value
-		})
-	}
+	// handleChange(e){
+	//     this.setState({
+	// 		email:e.target.value
+	// 	})
+	// }
 
 	handleClick(){
 		let id = this.props.id
 		let reqbody = {
-			"email":"elton@gmail.com"
+			"email": JSON.parse(localStorage.getItem("email"))
 		}
 		fetch(`https://andela-brightevents.herokuapp.com/api/v2/event/${id}/rsvp`,{
 			method: "POST",
@@ -35,6 +34,7 @@ export default class Rsvp extends Component {
 			res =>res.json()
 		).then(data=>{
 			console.log(data)
+            // alertActions.success(data.message)
 			this.setState({
 				message:data.message
 			})
@@ -44,7 +44,7 @@ export default class Rsvp extends Component {
 	render(){
 		return (
 			<div>
-				<Link onClick={this.handleClick} className="cs-rsvd" to={"#"} data-toggle="modal" data-target=".rsvp" >
+				<Link onClick={this.handleClick} className="cs-rsvd" to="#" data-toggle="modal" data-target=".rsvp" >
                     Book reservation
 				</Link>
 				<div className="modal fade rsvp" id="exampleModal" tabIndex="-1" role="dialog"
@@ -56,9 +56,9 @@ export default class Rsvp extends Component {
 									<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
-							{/*<input name='email' value={this.state.email} type="email" className="form-control" placeholder="Email address" onChange={this.handleChange} required />*/}
-
 							<div className="modal-body">
+								{/*<input name='email' value={this.state.email} type="email" className="form-control" placeholder="Email address" onChange={this.handleChange} required />*/}
+
 								{this.state.message}
 							</div>
 						</div>

@@ -52,20 +52,20 @@ class Event extends Component {
 								<p>{ category }</p>
 								<h4>Location</h4>
 								<p>{ location }</p>
-								<a href="https://www.google.com/maps/place/Thika+Road+Mall/@-1.2164517,36.8837127,15z/data=!4m5!3m4!1s0x0:0x2c30e07746ac972a!8m2!3d-1.2195003!4d36.8881872">View on map</a>
+								{/*<a href="https://www.google.com/maps/place/Thika+Road+Mall/@-1.2164517,36.8837127,15z/data=!4m5!3m4!1s0x0:0x2c30e07746ac972a!8m2!3d-1.2195003!4d36.8881872">View on map</a>*/}
 							</div>
 
 						</div>
 
-						<div className="row">
-							<div className="col-md-12 map">
-								<iframe
-									title="maps"
-									src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15955.652906733938!2d36.88421685!3d-1.2204388999999998!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ske!4v1524730462634"
-									width="101%" height="390" frameBorder="0" allowFullScreen>
-								</iframe>
-							</div>
-						</div>
+						{/*<div className="row">*/}
+							{/*<div className="col-md-12 map">*/}
+								{/*<iframe*/}
+									{/*title="maps"*/}
+									{/*src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15955.652906733938!2d36.88421685!3d-1.2204388999999998!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ske!4v1524730462634"*/}
+									{/*width="101%" height="390" frameBorder="0" allowFullScreen>*/}
+								{/*</iframe>*/}
+							{/*</div>*/}
+						{/*</div>*/}
 					</div>
 					{/*<p className="login-navigate cs-nav-home"><a href="/"> Go back to the Mainpage <span className="arrow-right icon"/></a></p>*/}
 				</main>

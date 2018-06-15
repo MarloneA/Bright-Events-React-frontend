@@ -23,7 +23,7 @@ describe("components",() => {
 			const { enzymeWrapper } = setup()
 
 
-			expect(enzymeWrapper.find("button").length).toBe(4)
+			expect(enzymeWrapper.find("button").length).toBe(3)
 			expect(enzymeWrapper.find("div").length).toBe(7)
 
 		})

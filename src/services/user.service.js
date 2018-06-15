@@ -25,6 +25,7 @@ function login (user) {
 				if (res && res.user.token) {
 					// store user details and jwt token in local storage to keep user logged in between page refreshes
 					localStorage.setItem("user", JSON.stringify(res.user.token))
+					localStorage.setItem("email", JSON.stringify(res.user.email))
 				}
 
 				return res.user
@@ -54,9 +55,6 @@ function register (user) {
 }
 
 function handleResponse (response) {
-	// if (!response.ok) {
-	// 	return Promise.reject(response.statusText)
-	// }
 
 	return response.json()
 }

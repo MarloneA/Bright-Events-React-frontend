@@ -9,12 +9,13 @@ import newEvent from "../reducers/newEvent.reducer"
 import editEvent from "../reducers/editEvent.reducer"
 import deletedEvent from "../reducers/deleteEvent.reducer"
 import searchEvent from "../reducers/searchEvent.reducer"
-
+import event from "../reducers/event.reducer"
 const rootReducer = combineReducers({
 	registration,
 	authentication,
 	alert,
 	loading,
+	event,
 	events,
 	myEvents,
 	newEvent,

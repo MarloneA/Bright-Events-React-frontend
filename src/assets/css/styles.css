@@ -200,12 +200,12 @@ h3, h4{
     border: 1px solid black;
 }
   .search-input{
-      width: 80%;
+      width: 150%;
       margin: auto;
-      height: 40px;
-      margin-left: 33px;
-      margin-top: 36px;
-      border: none;
+      /* height: 40px; */
+      margin-left: 178%;
+      /* margin-top: 36px; */
+      /* border: none; */
       border-bottom: 1px solid black;
       background: transparent;
   }
@@ -534,7 +534,7 @@ select.form-control:not([size]):not([multiple]) {
   margin: auto;
 }
 .cs-logout{
-    margin-left: 61%;
+    margin-left: 43%;
     border: none;
 }
 .cs-dcon{
@@ -661,8 +661,8 @@ Single event styling
     border-radius: 100%;
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
-    top: 19.5%;
-    left: 80%;
+    top: 32.5%;
+    left: 83%;
 }
 
 .search.icon:before {
@@ -794,6 +794,46 @@ tr{
 }
 
 
+.cs-text-overlay{
+
+}
+#css-logo{
+    border: 4px solid;
+    width: 30%;
+    font-size: 153%;
+    padding: 7px;
+    color: floralwhite;
+}
+.css-main-content{
+    border: 5px solid;
+    padding: 33px;
+    margin-top: 17%;
+    margin-left: 56%;
+    width: 100%;
+    color: floralwhite;
+}
+#css-main-header{
+    font-size: 400%;
+}
+#css-sub-heading{
+    font-size: 230%;
+}
+.cs-start{
+    border: 1px solid;
+    width: 24%;
+    margin: auto;
+    display: inline-block;
+    border-radius: 17px
+}
+.css-start{
+    margin-left: 23%;
+    margin-right: 2%;
+    margin-top: 3%;
+}
+.wrapper{
+    background: #343a40;
+    height: 720px;
+}
 
 
 /* ---------------------------------------------------

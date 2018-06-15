@@ -2,7 +2,7 @@ import {eventActionTypes} from "../actionTypes"
 import {authHeader} from "../helpers/auth_header"
 import {history} from "../helpers"
 
-const {NETWORK_REQUEST, EVENTS_FETCHED, FETCH_MY_EVENTS, CREATE_EVENT, EDIT_EVENT, DELETE_EVENT, SEARCH_EVENT} = eventActionTypes
+const {NETWORK_REQUEST, EVENTS_FETCHED,EVENT_FETCHED, FETCH_MY_EVENTS, CREATE_EVENT, EDIT_EVENT, DELETE_EVENT, SEARCH_EVENT} = eventActionTypes
 
 export const loading = ()=>({type:NETWORK_REQUEST})
 
@@ -10,6 +10,10 @@ export const eventsReceived = events => ({
 	type:EVENTS_FETCHED,
 	events
 })
+const eventFetched = event=>({type:EVENT_FETCHED,event})
+
+
+
 export const myEventsReceived = myEvents => ({
 	type: FETCH_MY_EVENTS,
 	myEvents
@@ -62,6 +66,17 @@ export const fetchEvents = ()=>dispatch=>{
 
 }
 
+export const fetchSingleEvent = (id)=>dispatch=>{
+	dispatch(loading())
+	return fetch(`https://andela-brightevents.herokuapp.com/api/v2/events/${id}`).then(
+		res =>res.json()
+	).then(data => {
+		dispatch(eventFetched(data.event))
+	})
+		.catch(error=>console.log("the error received is ", error))
+
+}
+
 export const fetchMyEvents = ()=>dispatch=>{
 	dispatch(loading())
 	return fetch("https://andela-brightevents.herokuapp.com/api/v2/events/myevents", {
@@ -95,9 +110,9 @@ export const editEvent = eventData =>dispatch=>{
 
 }
 
-export const deleteEvent = deleteid => dispatch =>{
+export const deleteEvent = id => dispatch =>{
+	console.log("the event is ", id)
 	dispatch(loading())
-	let id = deleteid
 	return fetch(`https://andela-brightevents.herokuapp.com/api/v2/events/${id}`,{
 		method: "DELETE",
 		headers:{
@@ -107,13 +122,12 @@ export const deleteEvent = deleteid => dispatch =>{
 	}).then(
 		res=>{ return res.json()}
 	).then(data=>{
-		console.log(data)
 		dispatch(deletingEvent(id))
 		history.push("/manage-events")
 	}).catch(error=>console.log("the error received is ", error))
 }
 
-export const searchEventt = query => dispatch =>{
+export const searchEvent = query => dispatch =>{
 	dispatch(loading())
 	return fetch(`https://andela-brightevents.herokuapp.com/api/v2/events/${query}/100/1`).then(
 		res => {
@@ -121,7 +135,6 @@ export const searchEventt = query => dispatch =>{
 		}
 	).then(
 		data => {
-			console.log(data)
 			dispatch(searchingEvent(data.search))
 		}
 	)

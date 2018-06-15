@@ -10,7 +10,7 @@ export default class Events extends Component {
 				return content(searchlist)
 			}
 			if(searchlist === null){
-			    return content(events)
+				return content(events)
 			}
 			return content(events)
 		}

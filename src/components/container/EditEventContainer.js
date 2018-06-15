@@ -1,11 +1,10 @@
 import {connect} from "react-redux"
-import Edit from "../pages/Edit"
-import {editEvent} from "../../actions";
+import {editEvent, fetchSingleEvent} from "../../actions";
+import EditEvent from "../presentation/EditEvent";
 
 const mapStateToProps = state=>{
-
 	return {
-		events: state.myEvents,
+		event:state.event,
 		editEvent:state.editEvent,
 		loading:state.loading
 	}
@@ -13,7 +12,8 @@ const mapStateToProps = state=>{
 
 const mapDispatchToProps = dispatch=>{
 	return {
-		editEvent: (event)=>dispatch(editEvent(event))
+		editEvent: (event)=>dispatch(editEvent(event)),
+		fetchEvent:(id)=>dispatch(fetchSingleEvent(id))
 	}
 }
-export default connect(mapStateToProps,mapDispatchToProps)(Edit)
+export default connect(mapStateToProps,mapDispatchToProps)(EditEvent)

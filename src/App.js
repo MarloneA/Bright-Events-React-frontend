@@ -17,6 +17,7 @@ import ManageEventsContainer from "./components/container/ManageEventsContainer"
 import NewEventContainer from "./components/container/NewEventContainer"
 import EditEventContainer from "./components/container/EditEventContainer"
 import GuestList from "./components/presentation/GuestList"
+import LandingPage from "./components/pages/LandingPage"
 
 class App extends Component {
 	constructor (props) {
@@ -42,6 +43,7 @@ class App extends Component {
 					<PrivateRoute path="/manage-events" component={ManageEventsContainer}/>
 					<PrivateRoute path="/create-event" component={NewEventContainer}/>
 					<PrivateRoute path="/edit-events/:id" component={ EditEventContainer }/>
+					<Route path="/home" component={ LandingPage }/>
 					<Route path="/login" component={Login}/>
 					<Route path="/register" component={Register}/>
 					<Route path="/reset-password" component={ResetPassword}/>

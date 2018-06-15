@@ -1,22 +1,44 @@
 import React, {Component} from "react"
 import { Link } from "react-router-dom"
 import DeletePopup from "./DeletePopup"
+import Head from "./Head";
 
 class ManageMyEvents extends Component {
-
-    onDelete = (id) => {
-        this.props.onDelete(id)
+    constructor(props) {
+        super(props);
+        this.state = {
+            id:''
+        }
+        this.deleteClicked = this.deleteClicked.bind(this)
     }
 
-	render () {
+    onDelete = (id) => {
+        console.log("the command center says", id)
+        this.props.deleteEvent(id)
+    }
+
+    componentDidMount() {
+		this.props.fetchMyEvents()
+    }
+
+    deleteClicked(id){
+        console.log("the event to be deleted is ", id)
+        this.setState({
+            id:id
+        })
+    }
+
+    render () {
 		const { events } = this.props
 		const content = events.map(
 			event => (
 				<div className="cs-card" key={event.id}>
 
-					<DeletePopup onDelete={this.onDelete} id={event.id}/>
-					<Link to={`/edit-events/${event.id}`} className="custom-btn edit btn btn-sm" >Edit</Link>
 
+					<Link to={`/edit-events/${event.id}`} className="custom-btn edit btn btn-sm" >Edit</Link>
+                    <button onClick={()=>this.deleteClicked(event.id)}  type="button" className="custom-btn edit btn btn-danger btn-sm" data-toggle="modal" data-target="#delmodal">
+                        Delete
+                    </button>
 					<div className="row">
 						<div className="col-md-3">
 							<div className="cs-cnt-img">
@@ -36,10 +58,15 @@ class ManageMyEvents extends Component {
 			)
 		)
 		return (
-			<div id="custom-main-content">
-				{content}
-				<div className="line"></div>
+			<div>
+				<Head/>
+                <DeletePopup onDelete={this.onDelete} id={this.state.id}/>
+                <div id="custom-main-content">
+                    {content}
+                    <hr/>
+                </div>
 			</div>
+
 		)
 	}
 }

@@ -1,5 +1,5 @@
 import React, {Component} from "react"
-import { searchEventt } from "../../actions"
+import { searchEvent } from "../../actions"
 import {connect} from "react-redux"
 
 class Search extends Component {
@@ -48,7 +48,7 @@ class Search extends Component {
 
 const mapDispatchToProps = dispatch =>{
 	return {
-		searchEvent: (query)=>dispatch(searchEventt(query))
+		searchEvent: (query)=>dispatch(searchEvent(query))
 	}
 }
 
