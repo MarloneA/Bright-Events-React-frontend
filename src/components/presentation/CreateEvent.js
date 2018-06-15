@@ -47,24 +47,19 @@ export default class CreateEvent extends Component {
 					</div>
 				</div>
 				<div className="form-group">
-					<label htmlFor="category" className="control-label custom-ce-label">Category:</label>
-					<select name="category" value={event.category} onChange={this.onChange} className="form-control category-styling custom-ce-label">
-						<option>...</option>
-						<option>Workshops</option>
-						<option>Science & Tech</option>
-						<option>Networking</option>
-						<option>Seminar</option>
-					</select>
+					<label className="control-label col-sm-2" htmlFor="category">Category:</label>
+					<div className="col-sm-10">
+						<input type="text" name="category" value={event.category} onChange={this.onChange} className="form-control custom-create-event-input" id="category" placeholder="Enter category"/>
+					</div>
 				</div>
+
+
+
 				<div className="form-group">
-					<label htmlFor="location" className="control-label custom-ce-label">Location:</label>
-					<select name="location" value={event.location} onChange={this.onChange} className="form-control location-styling custom-ce-label">
-						<option>...</option>
-						<option>Nairobi</option>
-						<option>Mombasa</option>
-						<option>Nakuru</option>
-						<option>Kisumu</option>
-					</select>
+					<label className="control-label col-sm-2" htmlFor="location">Location:</label>
+					<div className="col-sm-10">
+						<input type="text" name="location" value={event.location} onChange={this.onChange} className="form-control custom-create-event-input" id="location" placeholder="Enter location"/>
+					</div>
 				</div>
 
 				<div className="form-group">

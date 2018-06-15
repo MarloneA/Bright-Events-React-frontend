@@ -323,23 +323,27 @@ h3, h4{
     margin-left: 673px;
   }
   .custom-create-events{
-    width: 71%;
-      margin-left: 260px;
-    margin-top: 98px;
-    padding: 20px;
+      width: 71%;
+      margin-left: 15%;
+      margin-top: 6%;
+      padding: 3%;
+      background: #f8f9fa;
   }
   .custom-create-event-textarea{
-    display: block;
-    margin-left: 13px;
-    width: 81%;
-    padding: 15px;
+      max-width: 100%;
+      display: block;
+      margin-left: 13px;
+      width: 96%;
+      padding: 15px;
+      margin-right: 0;
   }
   .custom-ce-label{
     margin-left: 15px;
 
   }
   .custom-create-event-input{
-    padding:15px;
+      padding: 15px;
+      width: 120%;
   }
   .custom-event-styling{
       border-bottom: 1px solid black;
@@ -807,8 +811,8 @@ tr{
 .css-main-content{
     border: 5px solid;
     padding: 33px;
-    margin-top: 17%;
-    margin-left: 56%;
+    margin-top: 25%;
+    margin-left: 50%;
     width: 100%;
     color: floralwhite;
 }

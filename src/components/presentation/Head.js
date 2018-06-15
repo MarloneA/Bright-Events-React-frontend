@@ -14,8 +14,8 @@ export default class Head extends Component {
 
 				<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div className="navbar-nav">
-						<Link className="nav-item nav-link active pad" to="/home">Home <span className="sr-only">(current)</span></Link>
-						<Link className="nav-item nav-link pad" to="/">Browse Events</Link>
+						<Link className="nav-item nav-link active pad" to="/">Home <span className="sr-only">(current)</span></Link>
+						<Link className="nav-item nav-link pad" to="/events">Browse Events</Link>
 						<Link className="nav-item nav-link pad" to="/manage-events">Manage Events</Link>
 						<Link className="nav-item nav-link pad" to="/create-event">Create Event</Link>
 					</div>
