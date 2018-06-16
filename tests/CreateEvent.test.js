@@ -24,11 +24,10 @@ describe("components",() => {
 			const { enzymeWrapper } = setup()
 
 			expect(enzymeWrapper.find("form").hasClass("custom-create-events")).toBe(true)
-			expect(enzymeWrapper.find("input").length).toBe(2)
+			expect(enzymeWrapper.find("input").length).toBe(4)
+
 			expect(enzymeWrapper.find("button").length).toBe(1)
-			expect(enzymeWrapper.find("option").length).toBe(10)
-			expect(enzymeWrapper.find("div").length).toBe(9)
-			expect(enzymeWrapper.find("select").length).toBe(2)
+			expect(enzymeWrapper.find("div").length).toBe(11)
 
 			// const InputProps = enzymeWrapper.find("CreateEvent").props()
 			// expect(InputProps.onCreate).toBe(false)
