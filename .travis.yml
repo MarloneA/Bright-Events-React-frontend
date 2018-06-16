@@ -6,6 +6,6 @@ install:
   - npm install
 script:
   - npm test
-after_success:
-  - COVERALLS_REPO_TOKEN=ALtcYdELex0NpvXDuLZWSfMIgVQocChMK
-  - yarn coveralls
+after_script:
+  - COVERALLS_REPO_TOKEN=$coveralls_repo_token
+  - coveralls < coverage/lcov.info
