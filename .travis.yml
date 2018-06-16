@@ -7,4 +7,6 @@ cache:
 script:
   - npm install
   - npm test
-after_success: 'yarn coveralls'
+after_success:
+  - COVERALS_REPO_TOKEN=ALtcYdELex0NpvXDuLZWSfMIgVQocChMK
+  - npm run coveralls
