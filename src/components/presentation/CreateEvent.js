@@ -53,8 +53,6 @@ export default class CreateEvent extends Component {
 					</div>
 				</div>
 
-
-
 				<div className="form-group">
 					<label className="control-label col-sm-2" htmlFor="location">Location:</label>
 					<div className="col-sm-10">
